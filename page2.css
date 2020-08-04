@@ -1194,3 +1194,7 @@ reminder-div 3 = top:135px;
 	text-decoration: underline;
 	cursor: pointer;
 }
+
+audio{
+	display: none;
+}/*for audio tag 04/08/2020 9:55pm*/

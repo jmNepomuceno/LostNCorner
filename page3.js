@@ -49,7 +49,17 @@ let itemsOpen = false;
 
 function onLoad(){
 	//itemsBtn.style.pointerEvents = "none"
+	
+
 }
+
+function noteclose(){ 
+	document.getElementById("note").style.visibility = "hidden";
+}//pang close ng note 04/08/2020 - 8:04pm
+
+function bathroom(){
+	location.href="task.html";
+}// para sa bathroom 04/08/2020 8:19pm
 
 phoneBtn.addEventListener('click' , function(){
 

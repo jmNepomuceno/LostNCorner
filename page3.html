@@ -6,6 +6,12 @@
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 </head>
 <body onload="onLoad()">
+		<!--Audio bg music 04/08/2020 9:53pm-->
+		<audio controls>
+			<source src="music/m1.mp3" type="audio/mpeg">
+		  
+		  </audio>
+
 	<!-- CONSTANT DISPLAY IN EVERY PAGE/SCREEN -->
 	<div class="room">
 		<img src="./imgs/mainroom.png" id="room" >
@@ -271,11 +277,14 @@
 	</div>
 
 	<!-- note -->
-	<div class="note">
+	<div class="note" id="note" >
 		<h4>After ng kada sentence may lalabas na tatlong (...) na may css effects , ibig sabihin nun , kailangan nila 
 		i press yung enter para mag proceed sa next message o convo. Pag wala silang nakitang ganto (...) ibig sabihin may kailangan silang gawin na quest . tas pag nagawa na nila yung quest dun lang lalabas yung (...) Tapos yung timer o yung
 	clock , gagalaw o mag iiba na lang kada end ng specific convo o task ganun para medyo madali na din siguro i code</h4>
-	</div>
+	<input type="button" onclick="noteclose()" value="OK"/> 
+</div>
+
+<div id = "bath" title="Go to bathroom" onclick="bathroom()"> </div> <!-- Para magawa yung task na magpupunta sa bathroom 04/08/2020 - 8:12pm -->
 
 	<!-- <img src="./imgs/RPokerJuls.png" id="character-sec"> -->
 <script src="https://code.jquery.com/jquery-3.3.1.js"></script>

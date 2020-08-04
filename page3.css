@@ -992,3 +992,18 @@ body{
 	color:white;
 	font-size: 16pt;
 }
+
+#bath{
+	width:100px;
+	height:300px;
+	
+	position: absolute;
+	
+	top:150px;
+	left:900px;
+	cursor: pointer;
+}/*css nung bath */
+
+audio{
+	display: none;
+}/*for audio tag 04/08/2020 9:55pm*/
