@@ -1,0 +1,214 @@
+*{
+	margin:0px;
+	padding: 0px;
+	box-sizing: border-box;
+}
+
+.title-txt{
+	position: absolute;
+	top:70px;
+	left:270px;
+	z-index: 2;
+	background: transparent;
+	width:65%;
+	height: auto;
+}
+
+.title-txt h2{
+	font-size: 90pt;
+	font-family: Agency FB;
+	color:#333;
+	font-weight: 900;
+}
+
+.title-txt h2 span{
+	animation: titleTxtAnimate 4s linear infinite;
+}
+
+.title-txt h2 span:nth-child(1){
+	animation-delay: 0s;
+}
+
+.title-txt h2 span:nth-child(2){
+	animation-delay: 0.4s;
+}
+
+.title-txt h2 span:nth-child(3){
+	animation-delay: 0.8s;
+}
+.title-txt h2 span:nth-child(4){
+	animation-delay: 1.2s;
+}
+
+.title-txt h2 span:nth-child(5){
+	animation-delay: 1.6s;
+}
+
+.title-txt h2 span:nth-child(6){
+	animation-delay: 2s;
+}
+
+.title-txt h2 span:nth-child(7){
+	animation-delay: 2.4s;
+}
+
+.title-txt h2 span:nth-child(8){
+	animation-delay: 2.8s;
+}
+
+.title-txt h2 span:nth-child(9){
+	animation-delay: 3.2s;
+}
+
+.title-txt h2 span:nth-child(10){
+	animation-delay: 3.6s;
+}
+
+.title-txt h2 span:nth-child(11){
+	animation-delay: 4s;
+}
+
+
+@keyframes titleTxtAnimate{
+	0%,80%{
+		color:#333;
+		text-shadow: none;
+	}
+	100%{
+		color:#fff;
+		text-shadow: 0 0 10px #fff,
+					 0 0 20px #fff,
+					 0 0 40px #fff,
+					 0 0 80px #fff,
+					 0 0 120px #fff,
+					 0 0 160px #fff;
+	}
+}
+
+
+.cloud-effects{
+	width: 100%;
+}
+
+.banner{
+	position: absolute;
+	width:100%;
+	height: 660px;
+	background: url(./imgs/sky3.jpg);
+	background-size: 100% 100%;
+	background-position: top;
+}
+
+.banner .clouds{
+	position: absolute;
+	top:0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+
+.banner .clouds img{
+	position: absolute;
+	bottom: 0;
+	max-width: 100%;
+	animation: cloudAnimate calc(8s * var(--i)) linear infinite;
+}
+
+@keyframes cloudAnimate{
+	0%{
+		transform: translateX(-100%);
+	}
+	100%{
+		transform: translateX(100%);
+	}
+}
+
+.play-btn{
+	position: absolute;
+	top:280px;
+	left:600px;
+	z-index: 2;
+	font-family: consolas;
+	cursor: pointer;
+}
+
+.play-btn a{
+	position: relative;
+	display: inline-block;
+	padding: 15px 30px;
+	color: #808080;
+	text-transform: uppercase;
+	letter-spacing: 4px;
+	text-decoration: none;
+	font-size: 22pt;
+	overflow: hidden;
+	transition: 0.2s;
+}
+
+.play-btn a:hover{
+	color:#000;
+	background: #fff;
+	box-shadow: 0 0 10PX #fff, 0 0 40px #fff, 0 0 80px #fff;
+	transition-delay: 1s;
+}
+
+.play-btn a span{
+	position: absolute;
+	display: block;
+}
+
+.play-btn a span:nth-child(1){
+	top:0;
+	left:-100%;
+	width:100%;
+	height: 2px;
+	background: linear-gradient(90deg, transparent, #fff);
+}
+
+.play-btn a:hover span:nth-child(1){
+	left:100%;
+	transition: 1s;
+}
+
+.play-btn a span:nth-child(3){
+	bottom:0;
+	right:-100%;
+	width:100%;
+	height: 2px;
+	background: linear-gradient(270deg, transparent, #fff);
+}
+
+.play-btn a:hover span:nth-child(3){
+	right:100%;
+	transition: 1s;
+	transition-delay: 0.5s;
+}
+
+.play-btn a span:nth-child(2){
+	top:-100%;
+	right:0;
+	width:2px;
+	height: 100%;
+	background: linear-gradient(180deg, transparent, #fff);
+}
+
+.play-btn a:hover span:nth-child(2){
+	top:100%;
+	transition: 1s;
+	transition-delay: 0.25s;
+}
+
+.play-btn a span:nth-child(4){
+	bottom:-100%;
+	left:0;
+	width:2px;
+	height: 100%;
+	background: linear-gradient(360deg, transparent, #fff);
+}
+
+.play-btn a:hover span:nth-child(4){
+	bottom:100%;
+	transition: 1s;
+	transition-delay: 0.75s;
+}
