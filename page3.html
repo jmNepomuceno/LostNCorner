@@ -5,18 +5,14 @@
 	<link rel="stylesheet" type="text/css" href="page3.css">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 </head>
-<body onload="onLoad()">
-		<!--Audio bg music 04/08/2020 9:53pm-->
-		<audio controls autoplay>
-			<source src="music/m1.mp3" type="audio/mpeg">
-		  
-		  </audio>
+<body onload="onLoad()" onkeydown="spaceBarPressed(event)">
+	<!--Audio bg music 04/08/2020 9:53pm-->
+	<audio controls autoplay>
+		<source src="music/m1.mp3" type="audio/mpeg">
+	</audio>
 
 	<!-- CONSTANT DISPLAY IN EVERY PAGE/SCREEN -->
-	<div class="room">
-		<img src="./imgs/mainroom.png" id="room" >
-		<!-- try -->
-	</div>
+
 	<!-- the three side buttons in the upper right corner -->
 	<div class="nav-btns">
 		<ul>
@@ -258,35 +254,58 @@
 
 	<!-- END CONSTANT DISPLAY IN EVERY PAGE/SCREEN -->
 
-	<img src="./imgs/juls1.png" id="character-juls">
-
-	<div class="reminder-div-1">
-		<div class="arrow-down-1"></div>
-		<h4>Always read the <span class="span-orig">Conversation.</span> There maybe some clues on what they say.
-			<span class="okay-click">OK</span></h4>
-	</div>
-
-	<div class="characters-message-bar">
-		<p>Oh crap, its 7 am already, I need to be quick. I don’t want to be late in my first day! First, I need to take a bath.
-		</p>
-		<div class="elipsis">
-			<span style="--i:1">.</span>
-			<span style="--i:2">.</span>
-			<span style="--i:3">.</span>
+	<main class="main">
+		<div class="room">
+			<img src="./imgs/mainroom.png" id="room" >
 		</div>
-	</div>
 
-	<!-- note -->
-	<div class="note" id="note" >
-		<h4>After ng kada sentence may lalabas na tatlong (...) na may css effects , ibig sabihin nun , kailangan nila 
-		i press yung enter para mag proceed sa next message o convo. Pag wala silang nakitang ganto (...) ibig sabihin may kailangan silang gawin na quest . tas pag nagawa na nila yung quest dun lang lalabas yung (...) Tapos yung timer o yung
-	clock , gagalaw o mag iiba na lang kada end ng specific convo o task ganun para medyo madali na din siguro i code</h4>
-	<input type="button" onclick="noteclose()" value="OK"/> 
+		<img src="./imgs/juls1.png" id="character-juls">
+
+		<div class="reminder-div-1">
+			<div class="arrow-down-1"></div>
+			<h4>Always read the <span class="span-orig">Conversation.</span> There maybe some clues on what they say.
+				<span class="okay-click">OK</span></h4>
+		</div>
+
+		<!-- 9:15am -->
+		<div class="reminder-div-3">
+			<div class="arrow-left-3"></div>
+			<h4>Press the <span class="span-orig">SPACE BAR </span>whenever it appears, to proceed to next message.
+				<span class="okay-click">OK</span></h4>
+		</div>
+
+		<div class="characters-message-bar">
+			<p>Oh crap, its 7 am already, I need to be quick. I don’t want to be late in my first day! First, I need to take a bath.
+			</p>
+			<div class="elipsis">
+				<span style="--i:1">.</span>
+				<span style="--i:2">.</span>
+				<span style="--i:3">.</span>
+			</div>
+		</div>
+
+		<div id="bath" title="Go to bathroom" onclick="bathroom()"> </div> 
+		<!-- Para magawa yung task na magpupunta sa bathroom 04/08/2020 - 8:12pm -->
+	</main>
+
+<!-- try ko gawin yung , ipasok lang sa page3.html yung task.html , para pag katapos nung taking a bath, di
+	mag re reload yung page3.html, kumbaga i ha hide ko lang lahat ng asa screem mg page3.html tas i vi visible ko
+	yung taking bath na screen , tas after nun , hide ko ulit yung taking a bath , tas visibile ko na yung page3.html
+
+-->
+<!-- 8:09am -->
+<div class="screen-taking-bath">
+	<div class="title-bath">
+		<h4 id="title-bath-txt">GOING TO BATH</h4>
+		<h4 id="title-bath-txt">GOING TO BATH</h4>
+	</div>
+	<progress id="progress-bar" value="0" max="100"> </progress>
 </div>
 
-<div id = "bath" title="Go to bathroom" onclick="bathroom()"> </div> <!-- Para magawa yung task na magpupunta sa bathroom 04/08/2020 - 8:12pm -->
+<!-- ayan nalipat ko na , tas gawin ko na din yung restriction na , di muna na nila makikitang clickable yung
+pinto hanggang di nila nababasa/ o hanggat di nag sho show yung message , tas after mag end nung taking a bath
+, lalabas na yung tatlong ellipsis-->
 
-	<!-- <img src="./imgs/RPokerJuls.png" id="character-sec"> -->
 <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
 <script type="text/javascript" src="page3.js"></script>
 </body>

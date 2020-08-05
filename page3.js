@@ -1,4 +1,4 @@
-/*CONSTANT DISPLAY IN EVERY PAGE/SCREEN*/
+/**************************CONSTANT DISPLAY IN EVERY PAGE/SCREEN*********************/
 // open/close phone
 const phoneBtn = document.getElementById('see-phone-btn');
 const mobile = document.querySelector('.mobile');
@@ -8,7 +8,6 @@ let pwrBtnCont = 0;
 let pwrBtnOn = false;
 let mobileOpen = false;
 const phoneReturnBtn = document.querySelector('.phone-return-div');
-
 
 //variables for message div
 const msgIcon = document.getElementById('message-icon');
@@ -48,18 +47,8 @@ const inventoryDiv = document.querySelector('.inventory-div');
 let itemsOpen = false;
 
 function onLoad(){
-	//itemsBtn.style.pointerEvents = "none"
-	
-
+	itemsBtn.style.pointerEvents = "none"
 }
-
-function noteclose(){ 
-	document.getElementById("note").style.visibility = "hidden";
-}//pang close ng note 04/08/2020 - 8:04pm
-
-function bathroom(){
-	location.href="task.html";
-}// para sa bathroom 04/08/2020 8:19pm
 
 phoneBtn.addEventListener('click' , function(){
 
@@ -219,44 +208,48 @@ mapBtn.addEventListener('click', function(){
 } , false)
 
 // items div functions
-itemsBtn.addEventListener('click', function(){
+// itemsBtn.addEventListener('click', function(){
 
-	//whenever user click another NAV BTNs , it will automaitcally close . so the MAP INVENTROY and PHONE VIEW will not overlap
-	if(mobileOpen == true){
-		mobile.style.right = "-590px";
-		mobileOpen = false
-		mobile.style.visibility = "hidden"
+// 	//whenever user click another NAV BTNs , it will automaitcally close . so the MAP INVENTROY and PHONE VIEW will not overlap
+// 	if(mobileOpen == true){
+// 		mobile.style.right = "-590px";
+// 		mobileOpen = false
+// 		mobile.style.visibility = "hidden"
 		
-	}
+// 	}
 
-	//to hide and unhide the INVENTORY whenever the user click the INVENTORY VIEW btn
-	if(itemsOpen == false){
-		itemsDiv.style.visibility = "visible"
-		itemsDiv.style.right = "80px";
+// 	//to hide and unhide the INVENTORY whenever the user click the INVENTORY VIEW btn
+// 	if(itemsOpen == false){
+// 		itemsDiv.style.visibility = "visible"
+// 		itemsDiv.style.right = "80px";
 
-		inventoryDiv.style.visibility = "visible"
-		inventoryDiv.style.right = "120px";
+// 		inventoryDiv.style.visibility = "visible"
+// 		inventoryDiv.style.right = "120px";
 
-		itemsOpen = true
-	}else{
-		itemsDiv.style.right = "-400px";
-		inventoryDiv.style.right = "-400px";
+// 		itemsOpen = true
+// 	}else{
+// 		itemsDiv.style.right = "-400px";
+// 		inventoryDiv.style.right = "-400px";
 
-		itemsOpen = false
+// 		itemsOpen = false
 
-		itemsDiv.style.visibility = "visible"
-		inventoryDiv.style.visibility = "visible"
-	}
-} , false)
+// 		itemsDiv.style.visibility = "visible"
+// 		inventoryDiv.style.visibility = "visible"
+// 	}
+// } , false)
 
-/*END CONSTANT DISPLAY IN EVERY PAGE/SCREEN*/
+
+/**************************END CONSTANT DISPLAY IN EVERY PAGE/SCREEN**************************/
 
 const body = document.getElementsByTagName('BODY')
-
+const main = document.querySelector('.main')
 const elipsis = document.querySelector('.elipsis')
+var ellipsis_Is_visible = false // para mahandle yung , gagana lang yung space bar pressed pag visibile yung ellipsis
 
 //reminder 1 / Conversation Box
 const reminderDiv_1 = document.querySelector('.reminder-div-1')
+//reminder 3 / Ellipsis
+const reminderDiv_3 = document.querySelector('.reminder-div-3')
 
 // all reminder OKAY CLICK and SPAN ORIG
 const okClick = document.querySelectorAll('.okay-click')
@@ -265,12 +258,77 @@ const spanOrig = document.querySelectorAll('.span-orig')
 //all message bar and its child paragraph
 const msgBar_P = document.querySelectorAll('.characters-message-bar p')
 
-const note = document.querySelector('.note');
+//taking a bath variables
+const bathDiv = document.querySelector('.screen-taking-bath')
+const bathDoorDiv = document.getElementById("bath")
 
 //reminder 1 / Conversation Box
 okClick[0].addEventListener('click' , function(){
 	reminderDiv_1.style.visibility = "hidden"
 	msgBar_P[0].style.visibility = "visible"
 
-	note.style.visibility = "visible"
+	//dito magiging clickable na yung door
+	bathDoorDiv.style.pointerEvents = "auto"
 }, false)
+
+//reminder 3 / Ellipsis
+okClick[1].addEventListener('click' , function(){
+	reminderDiv_3.style.visibility = "hidden"
+}, false)
+
+
+//dapat sana sa div ng ellipsis to naka onkeydown , kaso need pa iclick yung div ng elipsis bago ka makapag space
+// kaya nilagay ko na lagn dun sa body yung onkeydown na fucntion
+function spaceBarPressed(event){
+	if(ellipsis_Is_visible){
+		var spaceBarCode = event.keyCode
+		if(spaceBarCode == 32){
+			reminderDiv_3.style.visibility = "hidden"
+			msgBar_P[0].textContent = "Hmm what do we have for breakfast?"
+			elipsis.style.visibility = "hidden"
+			ellipsis_Is_visible = false
+			//tas ikaw bahala kung change ka ng background na kusina o pwede na lang din naman ikaw mag lagay ng
+			// pagkain dun sa table tabi ng laptop
+		}
+	}
+}
+
+// 8:43am
+// taking a bath function
+
+// if(main.style.visibility = "hidden"){
+// 	bathBar()
+// }
+
+function bathroom(){
+	// location.href="task.html";
+	main.style.visibility = "hidden"
+	bathDiv.style.visibility = "visible"
+
+	bathBar()
+}// para sa bathroom 04/08/2020 8:19pm
+
+function bathBar(){
+	let counter = 0;
+    let vi;
+    vi = setInterval(function(){
+    	counter +=1;
+        document.getElementById("progress-bar").value = counter;
+        //console.log(counter);
+        if(counter == 100){ 
+			clearInterval(vi); 
+			bathDiv.style.visibility = "hidden"
+			main.style.visibility = "visible"
+
+			elipsis.style.visibility = "visible"
+			ellipsis_Is_visible = true
+
+			//tas lalabas na yung reminder , kung ano gagawin nila pag may ellipsis na
+			reminderDiv_3.style.visibility = "visible"
+
+			//tapos pag balik dun sa main screen , di na clickable yung pinto
+			bathDoorDiv.style.pointerEvents = "none"
+            //location.href="page3.html"
+        }
+	},100);
+}

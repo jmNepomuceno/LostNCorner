@@ -19,7 +19,7 @@ body{
 	height: 100%;
 	z-index: -1;
 	
-	 filter: blur(3px); 
+	filter: blur(3px); 
 }/* inedit ko opacity HAHA*/
 
 /*CONSTANT DISPLAY IN EVERY PAGE/SCREEN*/
@@ -28,11 +28,13 @@ body{
 	position: absolute;	
 	right:81px;
 	top:5px;
+	
 }
 
 .nav-btns ul{
 	position: relative;
 	display: flex;
+	z-index: 2;
 }
 
 .nav-btns ul li{
@@ -129,6 +131,8 @@ body{
 				inset 0 -15px 15px rgba(255,255,255,0.05),
 				0 15px 15px rgba(0,0,0,0.3),
 				inset 0 15px 15px rgba(0,0,0,0.3);
+
+	z-index: 2;
 }
 
 .am-pm{
@@ -206,7 +210,7 @@ body{
 	transition: 0.5s;
 	cursor: pointer;
 	pointer-events: none;
-
+	z-index: 2;
 	visibility: hidden;
 }
 
@@ -219,6 +223,7 @@ body{
 	height: 100%;
 	position: relative;
 	background: linear-gradient(0deg,#000, #272727);
+	z-index: 1;
 }
 
 #map-img{
@@ -241,7 +246,7 @@ body{
 	position: absolute;
 	left: -2px;
 	top: -2px;
-	background: linear-gradient(45deg , #fb0094 , #0000ff , #00ff00 , #ffff00 , #ff0000 , #fb0094 , #0000ff,
+	background: linear-gradient(45deg , #030303 , #0000ff , #00ff00 , #ffff00 , #ff0000 , #fb0094 , #0000ff,
 		#00ff00 , #ffff00 , #ff0000);
 	background-size: 400%;
 	width:calc(100% + 5px);
@@ -279,7 +284,7 @@ body{
 	border:3px solid #000;
 	background: #101010;
 	border-bottom: 0;
-	z-index: 1;
+	z-index: 2;
 	transition: 1s;
 
 	visibility: hidden;
@@ -314,6 +319,7 @@ body{
 	transition: 1s;
 	pointer-events: none;
 
+	z-index: 2;
 	visibility: hidden;
 }
 
@@ -394,7 +400,7 @@ body{
 	border-top: 0;
 	border-bottom: 0;
 	transition: 1s;
-
+	z-index: 2;
 	visibility: hidden;
 }
 
@@ -976,23 +982,6 @@ body{
 }
 
 
-
-.note{
-	position: absolute;
-	top:100px;
-	left:400px;
-	width:40%;
-	height: 300px;
-	background: black;
-
-	visibility: hidden;
-}
-
-.note h4{
-	color:white;
-	font-size: 16pt;
-}
-
 #bath{
 	width:100px;
 	height:300px;
@@ -1002,8 +991,135 @@ body{
 	top:150px;
 	left:900px;
 	cursor: pointer;
+
+	/* 9:07am */
+	pointer-events: none;
 }/*css nung bath */
 
 audio{
 	display: none;
 }/*for audio tag 04/08/2020 9:55pm*/
+
+/* 8:12am lipat task.css sa page3.css*/
+main{
+	visibility: visible;
+}
+
+.screen-taking-bath{
+	visibility: hidden;
+}
+
+/* Taking a bath screen */
+.screen-taking-bath{
+	position: absolute;
+	top:0;
+	width:100%;
+	height: 656px;
+	/* background: skyblue; */ 
+	background: #020c17; /* yung kulay ng Background, edit mo na lang mamaya kung alin mas bagay na color */
+	/* z-index: -1; */
+}
+#progress-bar{
+	height:50px;
+	width: 300px;
+	position:absolute;
+	top:300px;
+	left:550px;
+}
+
+.screen-taking-bath h1{
+	font-family: arial;
+}
+
+.title-bath{
+	position: relative;
+	width:100%;
+	height:300px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 100px;
+	box-sizing: border-box;
+	background-blend-mode: screen;
+}
+
+.title-bath h4{
+	position: absolute;
+	font-size: 110pt;
+	color:transparent;
+	font-family: Agency FB;
+	margin-left: 150px;
+	top:15px;
+	left:180px;
+}
+
+.title-bath h4:nth-child(1){
+	color:transparent;
+	-webkit-text-stroke: 2px #026a97; 
+	/* yung kulay ng wave na text,  edit mo na lang mamaya kung alin mas bagay na color*/
+}
+
+.title-bath h4:nth-child(2){
+	color: 	#026a97; 
+	/* yung kulay ng wave na text,  edit mo na lang mamaya kung alin mas bagay na color*/
+	animation: animate 4s ease-in-out infinite;
+}
+
+@keyframes animate{
+	0% , 100%{
+		clip-path: polygon(0 41%, 20% 39%, 31% 48%, 44% 55%, 58% 60%, 
+					76% 63%, 90% 58%, 100% 46%, 100% 100%, 0 100%);
+	}
+
+	50%{
+		clip-path: polygon(0 41%, 16% 53%, 35% 56%, 51% 54%, 60% 43%, 
+					72% 32%, 86% 30%, 100% 35%, 100% 100%, 0 100%);
+	}
+}
+
+/* 9:16am */
+/* reminder ng para sa ellipsis */
+.reminder-div-3{
+	position: absolute;
+	top:550px;
+	left:1000px;
+	right: 120px;
+	width:250px;
+	height: 100px;
+	background: #bd2031;
+	border-radius: 10px;
+	visibility: hidden;
+}
+
+.reminder-div-3 .arrow-left-3 {
+	position:absolute;
+	left:-44px;
+	top:0;
+	width: 0; 
+	height: 0; 
+	border-top: 50px solid transparent;
+	border-bottom: 50px solid transparent; 
+	
+	border-right:50px solid #bd2031; 
+  }
+
+.reminder-div-3 h4{
+	padding: 7px;
+	text-align: center;
+	color:white;
+	font-family: consolas;
+	font-size: 14pt;
+	letter-spacing: 1px;
+}
+
+.reminder-div-3 h4 .span-orig{
+	color:#9be1fb;
+	font-style: italic;
+}
+
+.reminder-div-3 h4 .okay-click{
+	color:#fff;
+	margin-left:10px;
+	text-decoration: underline;
+	cursor: pointer;
+}
