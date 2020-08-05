@@ -185,8 +185,10 @@ body{
 	transform: skewX(-5deg);
 }
 
-.screen h2{
-	margin-top:30px;
+#phone-time{
+	position: absolute;
+	top:20px;
+	left:60px;
 	color:#fff;
 	font-weight: 200;
 	font-size: 3.5em;
@@ -198,11 +200,34 @@ body{
 	opacity: 0;
 }
 
-.screen h2 span{
+#phone-date{
+	position: absolute;
+	top:80px;
+	color:#fff;
+	font-weight: 200;
+	font-size: 1.5em;
+	z-index:1;
+	line-height: 0.4em;
+	transition: 0.5s;
+	text-shadow: 0 1px 3px rgba(0,0,0,.5);
+	opacity: 0;
+}
+
+.screen #phone-time span{
 	font-size: 0.4em;
 }
 
-.screen.active h2{
+.screen #phone-date span{
+	font-size: 0.4em;
+}
+
+.screen.active #phone-time{
+	transform: translateY(0px);
+	opacity: 1;
+	transition-delay: 0.5s; 
+}
+
+.screen.active #phone-date{
 	transform: translateY(0px);
 	opacity: 1;
 	transition-delay: 0.5s; 

@@ -5,7 +5,7 @@
 	<link rel="stylesheet" type="text/css" href="page3.css">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 </head>
-<body onload="onLoad()" onkeydown="spaceBarPressed(event)">
+<body onload="onload()" onkeydown="spaceBarPressed(event)">
 	<!--Audio bg music 04/08/2020 9:53pm-->
 	<audio controls autoplay>
 		<source src="music/m1.mp3" type="audio/mpeg">
@@ -189,7 +189,8 @@
 
 				<img src="./imgs/phoneBg1.jpg" id="phone-img">
 
-				<h2>10:40<span>AM</span><br><span>  5th June, 2017</span></h2>
+				<h2 id="phone-time">10:40<span>AM</span><br></h2>
+				<h3 id="phone-date"> 5th June, 2017</h3>
 
 				<ul>
 
@@ -295,11 +296,6 @@
 		
 	</main>
 
-<!-- try ko gawin yung , ipasok lang sa page3.html yung task.html , para pag katapos nung taking a bath, di
-	mag re reload yung page3.html, kumbaga i ha hide ko lang lahat ng asa screem mg page3.html tas i vi visible ko
-	yung taking bath na screen , tas after nun , hide ko ulit yung taking a bath , tas visibile ko na yung page3.html
-
--->
 <!-- 8:09am -->
 <div class="screen-taking-bath">
 	<div class="title-bath">
@@ -309,9 +305,6 @@
 	<progress id="progress-bar" value="0" max="100"> </progress>
 </div>
 
-<!-- ayan nalipat ko na , tas gawin ko na din yung restriction na , di muna na nila makikitang clickable yung
-pinto hanggang di nila nababasa/ o hanggat di nag sho show yung message , tas after mag end nung taking a bath
-, lalabas na yung tatlong ellipsis-->
 
 <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
 <script type="text/javascript" src="page3.js"></script>

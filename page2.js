@@ -70,6 +70,10 @@ const  hr =document.querySelector('#hr');
 const  mn =document.querySelector('#mn');
 const  sc =document.querySelector('#sc');
 
+//phone date text 
+const phoneTime = document.getElementById('phone-time')
+let phoneAM = true
+
 let clockVar;
 
 let hh = 7;
@@ -125,6 +129,15 @@ function clockLoad(){
 
 			localStorage.setItem("minutes",mm);
 			localStorage.setItem("hours",hh);
+
+			//also update the time in the phone
+			let mm_str = parseInt(mm/6)
+
+			if(mm_str <= 9){
+				phoneTime.textContent = (phoneAM) ?  hh + ":0" + mm_str +  "am" :  hh + ":0" + mm_str + "pm"
+			}else{
+				phoneTime.textContent = (phoneAM) ?  hh + ":" + mm_str +  "am" :  hh + ":" + mm_str + "pm"
+			}
 
 			// second message/convo shows up
 			if(hh == 8){
