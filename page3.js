@@ -346,6 +346,7 @@ okClick[0].addEventListener('click' , function(){
 	msgBar_P.style.visibility = "visible"
 
 	//dito magiging clickable na yung door
+	document.getElementById("room").style.filter = "blur(1px)";//para mawala yung blur pag nag hahanap na siya 05/08/2020
 	bathDoorDiv.style.pointerEvents = "auto"
 	bedDiv.style.pointerEvents = "auto"
 	compuDiv.style.pointerEvents = "auto"
@@ -370,6 +371,7 @@ function spaceBarPressed(event){
 			msgBar_P.textContent = "Hmm what do we have for breakfast?"
 			elipsis.style.visibility = "hidden"
 			ellipsis_Is_visible = false
+			document.getElementById("room").style.filter = "blur(0px)";//para mawala yung blur pag nag hahanap na siya 05/08/2020
 			//tas ikaw bahala kung change ka ng background na kusina o pwede na lang din naman ikaw mag lagay ng
 			// pagkain dun sa table tabi ng laptop
 		}
@@ -416,6 +418,7 @@ function bathBar(){
 			dateDiv.style.pointerEvents = "none"
 			wagDiv.style.pointerEvents = "none" //inadd ko 05/08/2020-12:58 pm
 			document.getElementById("room").src="imgs/kitchen.jpg";//nag lagay ako ng kitchen bg, palitan ko parin to HAHA
+			document.getElementById("room").style.filter = "blur(3px)";// 05/08/2020
             //location.href="page4.html"
         }
 	},50);
