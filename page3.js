@@ -436,7 +436,7 @@ function bathBar(){
 			dateDiv.style.pointerEvents = "none"
 			wagDiv.style.pointerEvents = "none" //inadd ko 05/08/2020-12:58 pm
 
-			document.getElementById("room").src="imgs/kitchen.jpg";//nag lagay ako ng kitchen bg, palitan ko parin to HAHA
+			
 			document.getElementById("room").style.filter = "blur(3px)";// 05/08/2020
 
 			
