@@ -364,7 +364,7 @@ okClick[0].addEventListener('click' , function(){
 	msgBar_P.style.visibility = "visible"
 
 	//dito magiging clickable na yung door
-	document.getElementById("room").style.filter = "blur(1px)";//para mawala yung blur pag nag hahanap na siya 05/08/2020
+	document.getElementById("room").style.filter = "blur(0px)";//para mawala yung blur pag nag hahanap na siya 05/08/2020
 	bathDoorDiv.style.pointerEvents = "auto"
 	bedDiv.style.pointerEvents = "auto"
 	compuDiv.style.pointerEvents = "auto"
