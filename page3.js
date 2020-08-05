@@ -49,6 +49,7 @@ let itemsOpen = false;
 //clock div
 const clock = document.querySelector('.clock')
 let am_pm = document.querySelector('.A-P-span');
+let phoneAM = true
 
 //variables for clock
 const deg = 6;
@@ -62,10 +63,8 @@ let hh = 7;
 let mm = 0;
 let ss = 0;
 
-function pageLoad(){
-	//mapBtn.style.pointerEvents = "none"
+function onload(){
 	itemsBtn.style.pointerEvents = "none"
-	phoneBtn.style.pointerEvents = "none"
 }
 
 clockLoad()
@@ -83,7 +82,7 @@ if (localStorage.getItem("hours") !== null) {
 function clockLoad(){
 	clockVar = setInterval(function(){
 			//clearInterval(clockVar)
-			console.log(typeof mm)
+			//console.log(typeof mm)
 			ss++;
 
 			if(ss == 360){
@@ -107,6 +106,17 @@ function clockLoad(){
 			localStorage.setItem("minutes",mm);
 			localStorage.setItem("hours",hh);
 
+			//6:30pm
+			//also update the time in the phone
+			let mm_str = parseInt(mm/6)
+
+			if(mm_str <= 9){
+				phoneTime.textContent = (phoneAM) ?  hh + ":0" + mm_str +  "am" :  hh + ":0" + mm_str + "pm"
+			}else{
+				phoneTime.textContent = (phoneAM) ?  hh + ":" + mm_str +  "am" :  hh + ":" + mm_str + "pm"
+			}
+
+			
 			// second message/convo shows up
 			if(hh == 8){
 				showConvo_two = true;
@@ -116,8 +126,10 @@ function clockLoad(){
 			//am or pm
 			if(hh >= 12){
 				am_pm.textContent = "P"
+				phoneAM = false
 			}else{
 				am_pm.textContent = "A"
+				phoneAM = true
 			}
 	}, 10)
 }
@@ -136,9 +148,15 @@ phoneBtn.addEventListener('click' , function(){
 	}
 
 	if(mobileOpen == true){
-		mobile.style.right = "-590px"
-		mobileOpen = false;
-		mobile.style.visibility = "hidden"
+		/* the USER can't close the PHOVE VIEW if he/she didnt close his phone*/
+		if(pwrBtnOn == true){
+			reminderDiv2.style.visibility = "visible";
+		}else{
+			reminderDiv2.style.visibility = "hidden";
+			mobile.style.right = "-590px"
+			mobileOpen = false;
+			mobile.style.visibility = "hidden"
+		}
 	}else{
 		mobile.style.right = "90px"
 		mobileOpen = true;
@@ -154,12 +172,6 @@ phoneBtn.addEventListener('click' , function(){
 		showNotifFriend2 = false;
 	}
 
-	/* only for the page 2 , the USER can't proceed to page3 if he didnt close his phone*/
-	if(pwrBtnOn == true){
-		reminderDiv2.style.visibility = "visible";
-	}else{
-		//mobile.style.right = "-590px"
-	}
 }, false)
 
 mobilePwrBtn.addEventListener('click' , function(){
@@ -339,6 +351,12 @@ const dateDiv = document.getElementById("obj3")
 const wagDiv = document.getElementById("obj4")
 //inadd ko 05/08/2020-12:58 pm
 
+//room ID
+const roomImg = document.querySelector('#room')
+
+//phone date text 
+const phoneTime = document.getElementById('phone-time')
+
 
 //reminder 1 / Conversation Box
 okClick[0].addEventListener('click' , function(){
@@ -361,8 +379,6 @@ okClick[1].addEventListener('click' , function(){
 }, false)
 
 
-//dapat sana sa div ng ellipsis to naka onkeydown , kaso need pa iclick yung div ng elipsis bago ka makapag space
-// kaya nilagay ko na lagn dun sa body yung onkeydown na fucntion
 function spaceBarPressed(event){
 	if(ellipsis_Is_visible){
 		var spaceBarCode = event.keyCode
@@ -371,19 +387,21 @@ function spaceBarPressed(event){
 			msgBar_P.textContent = "Hmm what do we have for breakfast?"
 			elipsis.style.visibility = "hidden"
 			ellipsis_Is_visible = false
+
 			document.getElementById("room").style.filter = "blur(0px)";//para mawala yung blur pag nag hahanap na siya 05/08/2020
 			//tas ikaw bahala kung change ka ng background na kusina o pwede na lang din naman ikaw mag lagay ng
 			// pagkain dun sa table tabi ng laptop
+
+			
+			//lipat ko yung pag change ng bg image , kapag na press na nya yung space bar 6:01pm
+			roomImg.src="imgs/kitchen.jpg";//nag lagay ako ng kitchen bg, palitan ko parin to HAHA
+
 		}
 	}
 }
 
 // 8:43am
 // taking a bath function
-
-// if(main.style.visibility = "hidden"){
-// 	bathBar()
-// }
 
 function bathroom(){
 	// location.href="task.html";
@@ -417,8 +435,12 @@ function bathBar(){
 			compuDiv.style.pointerEvents = "none"
 			dateDiv.style.pointerEvents = "none"
 			wagDiv.style.pointerEvents = "none" //inadd ko 05/08/2020-12:58 pm
+
 			document.getElementById("room").src="imgs/kitchen.jpg";//nag lagay ako ng kitchen bg, palitan ko parin to HAHA
 			document.getElementById("room").style.filter = "blur(3px)";// 05/08/2020
+
+			
+
             //location.href="page4.html"
         }
 	},50);
@@ -441,3 +463,4 @@ function seedate(){
 	reset = setTimeout(restext,1000);
 }//05/08/2020 - 12:34pm
 
+// try ko gawin yung pati yung oras sa phone eh exact then dun sa main clock 6:19pm
