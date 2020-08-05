@@ -330,5 +330,5 @@ function bathBar(){
 			bathDoorDiv.style.pointerEvents = "none"
             //location.href="page3.html"
         }
-	},100);
+	},50);
 }
