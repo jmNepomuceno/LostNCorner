@@ -343,8 +343,8 @@ function bathBar(){
 			compuDiv.style.pointerEvents = "none"
 			dateDiv.style.pointerEvents = "none"
 			wagDiv.style.pointerEvents = "none" //inadd ko 05/08/2020-12:58 pm
-			
-            //location.href="page3.html"
+			document.getElementById("room").src="imgs/kitchen.jpg";//nag lagay ako ng kitchen bg, palitan ko parin to HAHA
+            //location.href="page4.html"
         }
 	},50);
 }
