@@ -83,9 +83,26 @@ function pageLoad(){
 }
 
 
+if (localStorage.getItem("minutes") !== null) {
+    mm = localStorage.getItem("minutes");
+    mm = parseInt(mm)
+}
+
+if (localStorage.getItem("hours") !== null) {
+    hh = localStorage.getItem("hours");
+    hh = parseInt(hh)
+}
+
+// nakalimutan ko para saan to HAHAAHA para pag ni refresh mo yung page 2, babalik ulit sa 7:00am ,
+//pero tuloy tuloy pa din run ng timer sa next page
+mm = 0;
+hh = 7;
+ss = 0;
+
 function clockLoad(){
-	/*clockVar = setInterval(function(){
-			clearInterval(clockVar)
+	clockVar = setInterval(function(){
+			//clearInterval(clockVar)
+			console.log(typeof mm)
 			ss++;
 
 			if(ss == 360){
@@ -106,6 +123,9 @@ function clockLoad(){
 			hr.style.transform = "rotate(" + (hh * 30) + "deg)";
 			mn.style.transform = "rotate(" + (mm) + "deg)";
 
+			localStorage.setItem("minutes",mm);
+			localStorage.setItem("hours",hh);
+
 			// second message/convo shows up
 			if(hh == 8){
 				showConvo_two = true;
@@ -118,7 +138,7 @@ function clockLoad(){
 			}else{
 				am_pm.textContent = "A"
 			}
-	}, 1)*/
+	}, 10)//adjust mo na lang yung timer dito.
 }
 
 
@@ -289,7 +309,7 @@ okClick[0].addEventListener('click' , function(){
 	reminderDiv1.style.visibility = "hidden"
 
 	//items btns enabled
-	itemsBtn.style.pointerEvents = "auto"
+	//itemsBtn.style.pointerEvents = "auto"
 
 	reminderDiv3.style.visibility = "visible"
 } , false)

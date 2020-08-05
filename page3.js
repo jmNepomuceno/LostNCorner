@@ -46,8 +46,80 @@ const itemsDiv = document.querySelector('.items-div')
 const inventoryDiv = document.querySelector('.inventory-div');
 let itemsOpen = false;
 
-function onLoad(){
+//clock div
+const clock = document.querySelector('.clock')
+let am_pm = document.querySelector('.A-P-span');
+
+//variables for clock
+const deg = 6;
+const  hr =document.querySelector('#hr');
+const  mn =document.querySelector('#mn');
+const  sc =document.querySelector('#sc');
+
+let clockVar;
+
+let hh = 7;
+let mm = 0;
+let ss = 0;
+
+function pageLoad(){
+	//mapBtn.style.pointerEvents = "none"
 	itemsBtn.style.pointerEvents = "none"
+	phoneBtn.style.pointerEvents = "none"
+}
+
+clockLoad()
+
+if (localStorage.getItem("minutes") !== null) {
+    mm = localStorage.getItem("minutes");
+    mm = parseInt(mm)
+}
+
+if (localStorage.getItem("hours") !== null) {
+    hh = localStorage.getItem("hours");
+    hh = parseInt(hh)
+}
+
+function clockLoad(){
+	clockVar = setInterval(function(){
+			//clearInterval(clockVar)
+			console.log(typeof mm)
+			ss++;
+
+			if(ss == 360){
+				ss = 0;
+				mm += 15;
+			}
+
+			if(mm == 360){
+				mm = 0;
+				hh += 0.5;
+			}
+
+			if(hh == 24){
+				// end of the day
+				clearInterval(clockVar)
+			}
+
+			hr.style.transform = "rotate(" + (hh * 30) + "deg)";
+			mn.style.transform = "rotate(" + (mm) + "deg)";
+
+			localStorage.setItem("minutes",mm);
+			localStorage.setItem("hours",hh);
+
+			// second message/convo shows up
+			if(hh == 8){
+				showConvo_two = true;
+				showNotifFriend2 = true
+			}
+
+			//am or pm
+			if(hh >= 12){
+				am_pm.textContent = "P"
+			}else{
+				am_pm.textContent = "A"
+			}
+	}, 10)
 }
 
 phoneBtn.addEventListener('click' , function(){
@@ -256,7 +328,7 @@ const okClick = document.querySelectorAll('.okay-click')
 const spanOrig = document.querySelectorAll('.span-orig')
 
 //all message bar and its child paragraph
-const msgBar_P = document.querySelectorAll('.characters-message-bar p')
+const msgBar_P = document.querySelector('.characters-message-bar p')
 
 //taking a bath variables
 const bathDiv = document.querySelector('.screen-taking-bath')
@@ -271,7 +343,7 @@ const wagDiv = document.getElementById("obj4")
 //reminder 1 / Conversation Box
 okClick[0].addEventListener('click' , function(){
 	reminderDiv_1.style.visibility = "hidden"
-	msgBar_P[0].style.visibility = "visible"
+	msgBar_P.style.visibility = "visible"
 
 	//dito magiging clickable na yung door
 	bathDoorDiv.style.pointerEvents = "auto"
@@ -295,7 +367,7 @@ function spaceBarPressed(event){
 		var spaceBarCode = event.keyCode
 		if(spaceBarCode == 32){
 			reminderDiv_3.style.visibility = "hidden"
-			msgBar_P[0].textContent = "Hmm what do we have for breakfast?"
+			msgBar_P.textContent = "Hmm what do we have for breakfast?"
 			elipsis.style.visibility = "hidden"
 			ellipsis_Is_visible = false
 			//tas ikaw bahala kung change ka ng background na kusina o pwede na lang din naman ikaw mag lagay ng
@@ -352,15 +424,17 @@ function bathBar(){
 var reset;// pang call ng pang reset ng text
 function restrictionOnObject(){
 	
-	document.getElementById("charactext").innerHTML="Cant do that now, i'll be late for school";
+	//document.getElementById("charactext").innerHTML="Cant do that now, i'll be late for school";
+	//yung document.getElementById("charactext") , nakavariable na yun , line 331
+	msgBar_P.textContent = "Cant do that now, i'll be late for school"
 	reset = setTimeout(restext,1000);
 }
 
 function restext(){
-	document.getElementById("charactext").innerHTML="Oh crap, its 7 am already, I need to be quick. I don’t want to be late in my first day! First, I need to take a bath.";
+	msgBar_P.textContent ="Oh crap, its 7 am already, I need to be quick. I don’t want to be late in my first day! First, I need to take a bath.";
 }
 function seedate(){
-	document.getElementById("charactext").innerHTML="Today is June 5, 2017 huh";
+	msgBar_P.textContent = "Today is June 5, 2017 huh";
 	reset = setTimeout(restext,1000);
 }//05/08/2020 - 12:34pm
 
