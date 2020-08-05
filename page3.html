@@ -273,9 +273,9 @@
 			<h4>Press the <span class="span-orig">SPACE BAR </span>whenever it appears, to proceed to next message.
 				<span class="okay-click">OK</span></h4>
 		</div>
-
+		<!--Nilagyan ko ng id yung 'p' nito-->
 		<div class="characters-message-bar">
-			<p>Oh crap, its 7 am already, I need to be quick. I don’t want to be late in my first day! First, I need to take a bath.
+			<p id="charactext">Oh crap, its 7 am already, I need to be quick. I don’t want to be late in my first day! First, I need to take a bath.
 			</p>
 			<div class="elipsis">
 				<span style="--i:1">.</span>
@@ -284,8 +284,15 @@
 			</div>
 		</div>
 
-		<div id="bath" title="Go to bathroom" onclick="bathroom()"> </div> 
 		<!-- Para magawa yung task na magpupunta sa bathroom 04/08/2020 - 8:12pm -->
+		<div id="bath" title="Go to bathroom" onclick="bathroom()"> </div> 
+		
+		<!--para pag naclick yung ibang object, lalabas character textbox na hindi niya pwedeng gawin yun muna 05/08/2020 - 12:34pm-->
+		<div class="restrictionOnObjects" id="obj1" title="Go to bed" onclick="restrictionOnObject()"> </div>
+		<div class="restrictionOnObjects" id="obj2" title="Play games" onclick="restrictionOnObject()"> </div>
+		<div class="restrictionOnObjects" id="obj3" title="check date" onclick="seedate()"> </div>
+		<div class="restrictionOnObjects" id="obj4" title="Stop, juls " onclick="restrictionOnObject()"> </div>
+		
 	</main>
 
 <!-- try ko gawin yung , ipasok lang sa page3.html yung task.html , para pag katapos nung taking a bath, di

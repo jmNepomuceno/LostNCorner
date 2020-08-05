@@ -1123,3 +1123,54 @@ main{
 	text-decoration: underline;
 	cursor: pointer;
 }
+
+/*para sa pag kinlick yung object na di pa kelangan - 05/08/2020 - 12:34pm*/
+.restrictionOnObjects{
+	 /*border:1px solid black; para makita yung clickbox ng objects*/ 
+	position: absolute;
+	top:0;
+	width: 50px;
+	height: 30px;
+	cursor: pointer;
+	
+}
+
+#obj1{
+	position: absolute;
+	left:320px;
+	top:370px;
+	z-index: 1;
+	height:170px;
+	width: 100px;
+	pointer-events: none;
+}
+
+#obj2{
+	position: absolute;
+	left:590px;
+	top:270px;
+	z-index: 1;
+	height:60px;
+	width: 110px;
+	pointer-events: none;
+}
+
+#obj3{
+	position: absolute;
+	left:290px;
+	top:140px;
+	z-index: 1;
+	height:90px;
+	width: 150px;
+	pointer-events: none;
+}
+#obj4{
+	position: absolute;
+	left:560px;
+	top:150px;
+	z-index: 1;
+	height:60px;
+	width: 140px;
+	pointer-events: none;
+}
+

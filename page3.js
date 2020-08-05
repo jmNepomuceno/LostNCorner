@@ -261,6 +261,12 @@ const msgBar_P = document.querySelectorAll('.characters-message-bar p')
 //taking a bath variables
 const bathDiv = document.querySelector('.screen-taking-bath')
 const bathDoorDiv = document.getElementById("bath")
+const bedDiv = document.getElementById("obj1")
+const compuDiv = document.getElementById("obj2")
+const dateDiv = document.getElementById("obj3")
+const wagDiv = document.getElementById("obj4")
+//inadd ko 05/08/2020-12:58 pm
+
 
 //reminder 1 / Conversation Box
 okClick[0].addEventListener('click' , function(){
@@ -269,8 +275,13 @@ okClick[0].addEventListener('click' , function(){
 
 	//dito magiging clickable na yung door
 	bathDoorDiv.style.pointerEvents = "auto"
+	bedDiv.style.pointerEvents = "auto"
+	compuDiv.style.pointerEvents = "auto"
+	dateDiv.style.pointerEvents = "auto"
+	wagDiv.style.pointerEvents = "auto"
 }, false)
 
+	
 //reminder 3 / Ellipsis
 okClick[1].addEventListener('click' , function(){
 	reminderDiv_3.style.visibility = "hidden"
@@ -328,7 +339,28 @@ function bathBar(){
 
 			//tapos pag balik dun sa main screen , di na clickable yung pinto
 			bathDoorDiv.style.pointerEvents = "none"
+			bedDiv.style.pointerEvents = "none"
+			compuDiv.style.pointerEvents = "none"
+			dateDiv.style.pointerEvents = "none"
+			wagDiv.style.pointerEvents = "none" //inadd ko 05/08/2020-12:58 pm
+			
             //location.href="page3.html"
         }
 	},50);
 }
+//para sa message pag nagclick ng ibang bagay
+var reset;// pang call ng pang reset ng text
+function restrictionOnObject(){
+	
+	document.getElementById("charactext").innerHTML="Cant do that now, i'll be late for school";
+	reset = setTimeout(restext,1000);
+}
+
+function restext(){
+	document.getElementById("charactext").innerHTML="Oh crap, its 7 am already, I need to be quick. I don’t want to be late in my first day! First, I need to take a bath.";
+}
+function seedate(){
+	document.getElementById("charactext").innerHTML="Today is June 5, 2017 huh";
+	reset = setTimeout(restext,1000);
+}//05/08/2020 - 12:34pm
+
