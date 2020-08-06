@@ -81,7 +81,7 @@ if (localStorage.getItem("hours") !== null) {
 
 function clockLoad(){
 	clockVar = setInterval(function(){
-			clearInterval(clockVar)
+			//clearInterval(clockVar)
 			//console.log(typeof mm)
 			ss++;
 
@@ -97,7 +97,7 @@ function clockLoad(){
 
 			if(hh == 24){
 				// end of the day
-				clearInterval(clockVar)
+				//clearInterval(clockVar)
 			}
 
 			hr.style.transform = "rotate(" + (hh * 30) + "deg)";
@@ -516,15 +516,20 @@ function eatingBfastScreen(){
     vi = setInterval(function(){
     	counter +=1;
 		document.getElementById("progress-bar-bfast").value = counter;
-		
+		console.log(counter);
 		//ditong part yung mag iiba iba yung image
-		breakfastMealScreen.src = "./imgs/bfast-" + counter + ".png"
+		breakfastMealScreen.src = "./imgs/bfast-" + counter +"t"+".png"
 		breakfastMealScreen.style.width = "150%"
 		breakfastMealScreen.style.left = "-170px"
 		
         //console.log(counter);
-        if(counter == 4){ 
-			clearInterval(vi); 
+        if(counter == 5){ 
+			clearInterval(vi);
+			eatBfastDiv.style.visibility = "hidden"//pagtapos kumain 2:41pm
+			main.style.visibility = "visible"//pagtapos kumain 2:41pm
+			document.getElementById("breakfast-meal").style.display="none";//pagtapos kumain 3:00pm
+			msgBar_P.textContent ="Aight, That's delicious. Time to go";//pagtapos kumain 3:00pm
+
         }
 	},1000); // ginawa ko lang 1000 para makita ko kung tama yung output HAHAHAHAHA
 }
