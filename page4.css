@@ -1,6 +1,6 @@
 *{
-	margin:0px;
-	padding: 0px;
+    margin:0px;
+    padding:0px;
 }
 
 body{
@@ -893,7 +893,11 @@ body{
 	font-style: italic;
 }
 
-/*END CONSTANT DISPLAY IN EVERY PAGE/SCREEN*/
+/* newly constant VARIABLES */
+
+audio{
+	display: none;
+}/*for audio tag 04/08/2020 9:55pm*/
 
 
 #character-juls{
@@ -927,7 +931,6 @@ body{
 	font-size: 22pt;
 	font-family: Arial;
 
-	visibility: hidden;
 }
 
 .elipsis{
@@ -937,7 +940,7 @@ body{
 	right:5px;
 	width:auto;
 
-	visibility: hidden;
+	/* visibility: hidden; */
 }
 
 .elipsis span{
@@ -961,326 +964,5 @@ body{
 	}
 }
 
-.reminder-div-1{
-	position: absolute;
-	top:400px;
-	left:555px;
-	right: 120px;
-	width:250px;
-	height: 100px;
-	background: #bd2031;
-	border-radius: 10px;
-	/*visibility: hidden;*/
-}
-
-.reminder-div-1 .arrow-down-1{
-	position: absolute;
-	bottom:-40px;
-	left:85px;
-    width: 0; 
-    height: 0; 
-    border-left: 40px solid transparent;
-    border-right: 40px solid transparent;
-  
-    border-top: 40px solid #bd2031;
-}
-
-.reminder-div-1 h4{
-	padding: 7px;
-	text-align: center;
-	color:white;
-	font-family: consolas;
-	font-size: 14pt;
-	letter-spacing: 1px;
-}
-
-.reminder-div-1 h4 .span-orig{
-	color:#9be1fb;
-	font-style: italic;
-}
-
-.reminder-div-1 h4 .okay-click{
-	color:#fff;
-	margin-left:10px;
-	text-decoration: underline;
-	cursor: pointer;
-}
-
-
-#bath{
-	width:100px;
-	height:300px;
-	
-	position: absolute;
-	
-	top:150px;
-	left:900px;
-	cursor: pointer;
-
-	/* 9:07am */
-	pointer-events: none;
-
-}/*css nung bath */
-
-audio{
-	display: none;
-}/*for audio tag 04/08/2020 9:55pm*/
-
-/* 8:12am lipat task.css sa page3.css*/
-main{
-	visibility: visible;
-}
-
-.screen-taking-bath{
-	visibility: hidden;
-}
-
-/* Taking a bath screen */
-.screen-taking-bath{
-	position: absolute;
-	top:0;
-	width:100%;
-	height: 656px;
-	/* background: skyblue; */ 
-	background: #020c17; /* yung kulay ng Background, edit mo na lang mamaya kung alin mas bagay na color */
-	/* z-index: -1; */
-}
-#progress-bar{
-	height:50px;
-	width: 300px;
-	position:absolute;
-	top:300px;
-	left:550px;
-}
-
-.screen-taking-bath h1{
-	font-family: arial;
-}
-
-.title-bath{
-	position: relative;
-	width:100%;
-	height:300px;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	padding: 100px;
-	box-sizing: border-box;
-	background-blend-mode: screen;
-}
-
-.title-bath h4{
-	position: absolute;
-	font-size: 110pt;
-	color:transparent;
-	font-family: Agency FB;
-	margin-left: 150px;
-	top:15px;
-	left:180px;
-}
-
-.title-bath h4:nth-child(1){
-	color:transparent;
-	-webkit-text-stroke: 2px #026a97; 
-	/* yung kulay ng wave na text,  edit mo na lang mamaya kung alin mas bagay na color*/
-}
-
-.title-bath h4:nth-child(2){
-	color: 	#026a97; 
-	/* yung kulay ng wave na text,  edit mo na lang mamaya kung alin mas bagay na color*/
-	animation: animate 4s ease-in-out infinite;
-}
-
-@keyframes animate{
-	0% , 100%{
-		clip-path: polygon(0 41%, 20% 39%, 31% 48%, 44% 55%, 58% 60%, 
-					76% 63%, 90% 58%, 100% 46%, 100% 100%, 0 100%);
-	}
-
-	50%{
-		clip-path: polygon(0 41%, 16% 53%, 35% 56%, 51% 54%, 60% 43%, 
-					72% 32%, 86% 30%, 100% 35%, 100% 100%, 0 100%);
-	}
-}
-
-/* 9:16am */
-/* reminder ng para sa ellipsis */
-.reminder-div-3{
-	position: absolute;
-	top:550px;
-	left:1000px;
-	right: 120px;
-	width:250px;
-	height: 100px;
-	background: #bd2031;
-	border-radius: 10px;
-	visibility: hidden;
-}
-
-.reminder-div-3 .arrow-left-3 {
-	position:absolute;
-	left:-44px;
-	top:0;
-	width: 0; 
-	height: 0; 
-	border-top: 50px solid transparent;
-	border-bottom: 50px solid transparent; 
-	
-	border-right:50px solid #bd2031; 
-  }
-
-.reminder-div-3 h4{
-	padding: 7px;
-	text-align: center;
-	color:white;
-	font-family: consolas;
-	font-size: 14pt;
-	letter-spacing: 1px;
-}
-
-.reminder-div-3 h4 .span-orig{
-	color:#9be1fb;
-	font-style: italic;
-}
-
-.reminder-div-3 h4 .okay-click{
-	color:#fff;
-	margin-left:10px;
-	text-decoration: underline;
-	cursor: pointer;
-}
-
-/*para sa pag kinlick yung object na di pa kelangan - 05/08/2020 - 12:34pm*/
-.restrictionOnObjects{
-	 /*border:1px solid black; para makita yung clickbox ng objects*/ 
-	position: absolute;
-	top:0;
-	width: 50px;
-	height: 30px;
-	cursor: pointer;
-	
-}
-
-#obj1{
-	position: absolute;
-	left:320px;
-	top:370px;
-	z-index: 1;
-	height:170px;
-	width: 100px;
-	pointer-events: none;
-}
-
-#obj2{
-	position: absolute;
-	left:590px;
-	top:270px;
-	z-index: 1;
-	height:60px;
-	width: 110px;
-	pointer-events: none;
-}
-
-#obj3{
-	position: absolute;
-	left:290px;
-	top:140px;
-	z-index: 1;
-	height:90px;
-	width: 150px;
-	pointer-events: none;
-}
-#obj4{
-	position: absolute;
-	left:560px;
-	top:150px;
-	z-index: 1;
-	height:60px;
-	width: 140px;
-	pointer-events: none;
-}
-
-/* 9:10am */
-#refrigirator{
-	position: absolute;
-	top:115px;
-	right:160px;
-	width:180px;
-	height: 500px;
-	cursor: pointer;
-
-	visibility: hidden;
-}
-
-#breakfast-meal{
-	position: absolute;
-	top:340px;
-	left:630px;
-	width:80px;
-	height: 80px;
-	transform: rotateX(50deg);
-	cursor: pointer;
-
-	visibility: hidden;
-}
-
-/* different screen , for eating breakfast */
-
-.screen-eating-breakfast{
-	position: absolute;
-	top:0;
-	width:100%;
-	height: 656px;
-	background: #020c17;
-
-	visibility: hidden;
-}
-
-.bfast-img-div{
-	position: absolute;
-	top:10px;
-	left:350px;
-	width:50%;
-	height:500px;
-}
-
-#breakfast-meal-screen{
-	position: absolute;
-	width:100%;
-	height: 100%;
-}
-
-#progress-bar-bfast{
-	height:50px;
-	width: 300px;
-	position:absolute;
-	top:600px;
-	left:550px;
-}
-
-.house-jim{
-	position: absolute;
-	bottom:55px;
-	left:415px;
-	width:40px;
-	height: 40px;
-	z-index: 2;
-	cursor: pointer;
-
-	visibility: hidden;
-}
-.house-juls{
-	position: absolute;
-	bottom:10px;
-	left:390px;
-	width:40px;
-	height: 40px;
-	z-index: 2;
-
-	cursor: pointer;
-
-	/* visibility: hidden; */
-}
-
-
+/*END CONSTANT DISPLAY IN EVERY PAGE/SCREEN*/
 

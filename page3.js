@@ -82,7 +82,6 @@ if (localStorage.getItem("hours") !== null) {
 function clockLoad(){
 	clockVar = setInterval(function(){
 			//clearInterval(clockVar)
-			//console.log(typeof mm)
 			ss++;
 
 			if(ss == 360){
@@ -92,12 +91,12 @@ function clockLoad(){
 
 			if(mm == 360){
 				mm = 0;
-				hh += 0.5;
+				hh += 1;
 			}
 
 			if(hh == 24){
 				// end of the day
-				//clearInterval(clockVar)
+				clearInterval(clockVar)
 			}
 
 			hr.style.transform = "rotate(" + (hh * 30) + "deg)";
@@ -131,7 +130,7 @@ function clockLoad(){
 				am_pm.textContent = "A"
 				phoneAM = true
 			}
-	}, 10)
+	}, 20)
 }
 
 phoneBtn.addEventListener('click' , function(){
@@ -365,9 +364,13 @@ const breakfastMealScreen = document.getElementById('breakfast-meal-screen')
 //to handle the specific message for every SPACE BAR pressed
 let done_bath = false
 let done_open_ref = false
+let done_eat_screen = false
 
 //screen para sa eating breakfast
 const eatBfastDiv = document.querySelector('.screen-eating-breakfast')
+
+//house of JIM div
+const houseJIM = document.querySelector('.house-jim')
 
 //reminder 1 / Conversation Box
 okClick[0].addEventListener('click' , function(){
@@ -419,6 +422,22 @@ function spaceBarPressed(event){
 			ellipsis_Is_visible = false
 
 			roomImg.style.filter = "blur(0px)";
+		}
+
+		//  5:25 pm
+		// tong mga done_eat_screen pala nato , para mag i iba yung mga kalalabasan , kapag nag press ng SPACE BAR
+
+		if(spaceBarCode == 32 && done_eat_screen){
+			elipsis.style.visibility = "hidden"
+			ellipsis_Is_visible = false
+
+			roomImg.src = "./imgs/mainroom.png"
+			roomImg.style.filter = "blur(3px)";
+
+			msgBar_P.textContent = "Alright, I think I am good to go! Oh damn, I almost forgot, I need to go to pick up Jim."
+
+			// tas lalagyan ko ng ng transparent div saka title yung bahay ni JIM , para ma cli click nila , tas punta na sa page4.html
+			houseJIM.style.visibility = "visible"
 		}
 	}
 }
@@ -512,24 +531,40 @@ function onClickBfastMeal(){
 
 function eatingBfastScreen(){
 	let counter = 0;
+	let imgCont = 0
     let vi;
     vi = setInterval(function(){
     	counter +=1;
 		document.getElementById("progress-bar-bfast").value = counter;
-		console.log(counter);
-		//ditong part yung mag iiba iba yung image
-		breakfastMealScreen.src = "./imgs/bfast-" + counter +"t"+".png"
-		breakfastMealScreen.style.width = "150%"
-		breakfastMealScreen.style.left = "-170px"
-		
+		//console.log(counter);
+
+		//5:19pm para maging tuloy tuloy lang yung progress bar , kagaya nung sa taking a bath.
+		if(counter % 20 == 0){
+			imgCont += 1
+			breakfastMealScreen.src = "./imgs/bfast-" + imgCont +"t"+".png"
+			breakfastMealScreen.style.width = "150%"
+			breakfastMealScreen.style.left = "-170px"
+		}
+
         //console.log(counter);
-        if(counter == 5){ 
+        if(counter == 100){ 
 			clearInterval(vi);
 			eatBfastDiv.style.visibility = "hidden"//pagtapos kumain 2:41pm
 			main.style.visibility = "visible"//pagtapos kumain 2:41pm
 			document.getElementById("breakfast-meal").style.display="none";//pagtapos kumain 3:00pm
-			msgBar_P.textContent ="Aight, That's delicious. Time to go";//pagtapos kumain 3:00pm
+			// ay hayop oo nga no , may DISPLAY NONE pala amputa HAHAHAHAHAH nag tya tyaga ako sa visibility = hidden ganun HAHAHAHA
+			msgBar_P.textContent = "Aight, That's delicious. Time to go";//pagtapos kumain 3:00pm
+
+
+			//5:23pm
+			elipsis.style.visibility = "visible"
+			ellipsis_Is_visible = true
+			done_eat_screen = true
 
         }
-	},1000); // ginawa ko lang 1000 para makita ko kung tama yung output HAHAHAHAHA
+	},50);// binalik ko an sa 50 , tas yung sa html na , max = 100.
+}
+//road to page4 na HAHHAHHAH
+function onClickJimHouse(){
+	location.href = "page4.html"
 }

@@ -3,7 +3,8 @@
 <head>
 	<title>Juls' House | Lost n' Corner</title>
 	<link rel="stylesheet" type="text/css" href="page3.css">
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" 
+	integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 </head>
 <body onload="onload()" onkeydown="spaceBarPressed(event)">
 	<!--Audio bg music 04/08/2020 9:53pm-->
@@ -64,6 +65,16 @@
 		<div class="map moving-glow">
 			<img src="./imgs/map1.png" id="map-img">
 		</div>
+
+		<!-- 5:31pm -->
+		<div class="house-juls" title="YOUR HOME">
+			
+		</div>
+
+		<div class="house-jim" title="JIM's HOUSE" onclick="onClickJimHouse()">
+			
+		</div>
+
 	</div>
 
 	<!-- the inventory title  -->
@@ -317,10 +328,8 @@
 	<div class="bfast-img-div">
 		<img src="./imgs/breakfastMeal.png" id="breakfast-meal-screen">
 	</div>
-	<progress id="progress-bar-bfast" value="0" max="4"> </progress>
+	<progress id="progress-bar-bfast" value="0" max="100"> </progress>
 </div>
-
-
 
 <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
 <script type="text/javascript" src="page3.js"></script>
