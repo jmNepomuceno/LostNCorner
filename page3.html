@@ -294,16 +294,31 @@
 		<div class="restrictionOnObjects" id="obj3" title="check date" onclick="seedate()"> </div>
 		<div class="restrictionOnObjects" id="obj4" title="Stop, juls " onclick="restrictionOnObject()"> </div>
 		
+
+		<!-- 9:07am -->
+		<!-- Magiging clickable yung ref tas , pag na click may lalabas na breakfast meal dun sa tabi ng lababo sigur -->
+		<div id="refrigirator" title="Open the Refrigirator" onclick="onClickRef()"></div>
+		<img src="./imgs/breakfastMeal.png" id="breakfast-meal" title="Eat your breakfast" onclick="onClickBfastMeal()">
+		<!--  yung Foods img , dun na lang sa recess nila sa school lagay yun HAHAHAHA  -->
 	</main>
 
 <!-- 8:09am -->
 <div class="screen-taking-bath">
 	<div class="title-bath">
-		<h4 id="title-bath-txt">GOING TO BATH</h4>
-		<h4 id="title-bath-txt">GOING TO BATH</h4>
+		<h4 id="title-bath-txt">TAKING A BATH</h4>
+		<h4 id="title-bath-txt">TAKING A BATH</h4>
 	</div>
 	<progress id="progress-bar" value="0" max="100"> </progress>
 </div>
+
+<!-- 10:00am -->
+<div class="screen-eating-breakfast">
+	<div class="bfast-img-div">
+		<img src="./imgs/breakfastMeal.png" id="breakfast-meal-screen">
+	</div>
+	<progress id="progress-bar-bfast" value="0" max="100"> </progress>
+</div>
+
 
 
 <script src="https://code.jquery.com/jquery-3.3.1.js"></script>

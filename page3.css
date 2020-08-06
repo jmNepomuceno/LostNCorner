@@ -1019,6 +1019,7 @@ body{
 
 	/* 9:07am */
 	pointer-events: none;
+
 }/*css nung bath */
 
 audio{
@@ -1198,4 +1199,63 @@ main{
 	width: 140px;
 	pointer-events: none;
 }
+
+/* 9:10am */
+#refrigirator{
+	position: absolute;
+	top:115px;
+	right:160px;
+	width:180px;
+	height: 500px;
+	cursor: pointer;
+
+	visibility: hidden;
+}
+
+#breakfast-meal{
+	position: absolute;
+	top:340px;
+	left:630px;
+	width:80px;
+	height: 80px;
+	transform: rotateX(50deg);
+	cursor: pointer;
+
+	visibility: hidden;
+}
+
+/* different screen , for eating breakfast */
+
+.screen-eating-breakfast{
+	position: absolute;
+	top:0;
+	width:100%;
+	height: 656px;
+	background: #020c17;
+
+	visibility: hidden;
+}
+
+.bfast-img-div{
+	position: absolute;
+	top:10px;
+	left:350px;
+	width:50%;
+	height:500px;
+}
+
+#breakfast-meal-screen{
+	position: absolute;
+	width:100%;
+	height: 100%;
+}
+
+#progress-bar-bfast{
+	height:50px;
+	width: 300px;
+	position:absolute;
+	top:600px;
+	left:550px;
+}
+
 

@@ -81,7 +81,7 @@ if (localStorage.getItem("hours") !== null) {
 
 function clockLoad(){
 	clockVar = setInterval(function(){
-			//clearInterval(clockVar)
+			clearInterval(clockVar)
 			//console.log(typeof mm)
 			ss++;
 
@@ -357,6 +357,17 @@ const roomImg = document.querySelector('#room')
 //phone date text 
 const phoneTime = document.getElementById('phone-time')
 
+//9:33am
+//kitchen divs and varibles
+const refrigirator = document.getElementById('refrigirator')
+const breakfastMeal = document.getElementById('breakfast-meal')
+const breakfastMealScreen = document.getElementById('breakfast-meal-screen')
+//to handle the specific message for every SPACE BAR pressed
+let done_bath = false
+let done_open_ref = false
+
+//screen para sa eating breakfast
+const eatBfastDiv = document.querySelector('.screen-eating-breakfast')
 
 //reminder 1 / Conversation Box
 okClick[0].addEventListener('click' , function(){
@@ -382,13 +393,13 @@ okClick[1].addEventListener('click' , function(){
 function spaceBarPressed(event){
 	if(ellipsis_Is_visible){
 		var spaceBarCode = event.keyCode
-		if(spaceBarCode == 32){
+		if(spaceBarCode == 32 && done_bath){
 			reminderDiv_3.style.visibility = "hidden"
 			msgBar_P.textContent = "Hmm what do we have for breakfast?"
 			elipsis.style.visibility = "hidden"
 			ellipsis_Is_visible = false
 
-			document.getElementById("room").style.filter = "blur(0px)";//para mawala yung blur pag nag hahanap na siya 05/08/2020
+			roomImg.style.filter = "blur(0px)";//para mawala yung blur pag nag hahanap na siya 05/08/2020
 			//tas ikaw bahala kung change ka ng background na kusina o pwede na lang din naman ikaw mag lagay ng
 			// pagkain dun sa table tabi ng laptop
 
@@ -396,6 +407,18 @@ function spaceBarPressed(event){
 			//lipat ko yung pag change ng bg image , kapag na press na nya yung space bar 6:01pm
 			roomImg.src="imgs/kitchen.jpg";//nag lagay ako ng kitchen bg, palitan ko parin to HAHA
 
+			//make ref clickable
+			refrigirator.style.visibility = "visible"
+		}
+
+		if(spaceBarCode == 32 && done_open_ref){
+			msgBar_P.textContent = "Alright, that looks delicious! Time to eat."
+			breakfastMeal.style.visibility = "visible"
+
+			elipsis.style.visibility = "hidden"
+			ellipsis_Is_visible = false
+
+			roomImg.style.filter = "blur(0px)";
 		}
 	}
 }
@@ -425,6 +448,7 @@ function bathBar(){
 
 			elipsis.style.visibility = "visible"
 			ellipsis_Is_visible = true
+			done_bath = true
 
 			//tas lalabas na yung reminder , kung ano gagawin nila pag may ellipsis na
 			reminderDiv_3.style.visibility = "visible"
@@ -436,12 +460,17 @@ function bathBar(){
 			dateDiv.style.pointerEvents = "none"
 			wagDiv.style.pointerEvents = "none" //inadd ko 05/08/2020-12:58 pm
 
+			//9:01am
+			//gawing kong mga visibility = hidden yung mga div na to , baka kasi mag patong sila ng mga div na 
+			// ilalagay natin sa kitchen background
+			bathDoorDiv.style.visibility = "hidden"
+			bedDiv.style.visibility = "hidden"
+			compuDiv.style.visibility = "hidden"
+			dateDiv.style.visibility = "hidden"
+			wagDiv.style.visibility = "hidden" 
+
 			
 			document.getElementById("room").style.filter = "blur(3px)";// 05/08/2020
-
-			
-
-            //location.href="page4.html"
         }
 	},50);
 }
@@ -463,4 +492,39 @@ function seedate(){
 	reset = setTimeout(restext,1000);
 }//05/08/2020 - 12:34pm
 
-// try ko gawin yung pati yung oras sa phone eh exact then dun sa main clock 6:19pm
+//9:36am
+function onClickRef(){
+	elipsis.style.visibility = "visible"
+	ellipsis_Is_visible = true
+	done_open_ref = true
+
+	//remove pointer events and visibility to hidden
+	refrigirator.style.pointerEvents = "none"
+	refrigirator.style.visibility = "hidden"
+}
+
+function onClickBfastMeal(){
+	eatBfastDiv.style.visibility = "visible"
+	main.style.visibility = "hidden"
+
+	eatingBfastScreen()
+}
+
+function eatingBfastScreen(){
+	let counter = 0;
+    let vi;
+    vi = setInterval(function(){
+    	counter +=1;
+		document.getElementById("progress-bar-bfast").value = counter;
+		
+		//ditong part yung mag iiba iba yung image
+		breakfastMealScreen.src = "./imgs/bfast-" + counter + ".png"
+		breakfastMealScreen.style.width = "150%"
+		breakfastMealScreen.style.left = "-170px"
+		
+        //console.log(counter);
+        if(counter == 4){ 
+			clearInterval(vi); 
+        }
+	},1000); // ginawa ko lang 1000 para makita ko kung tama yung output HAHAHAHAHA
+}
