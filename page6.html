@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="page6.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" 
+        integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+</head>
+<body onload="onload()" onkeydown="spaceBarPressed(event)">
+
+	<!--Audio bg music 04/08/2020 9:53pm-->
+	<!-- <audio controls autoplay loop>
+	    <source src="music/m1.mp3" type="audio/mpeg">
+	</audio> -->
+
+	<!-- CONSTANT DISPLAY IN EVERY PAGE/SCREEN -->
+
+	<!-- the three side buttons in the upper right corner -->
+	<div class="nav-btns">
+	    <ul>
+	        <li>
+	            <a onclick="" style="text-decoration: none;" id="see-map-btn">
+	                <label>
+	                    <div class="icon" ><i class="fa fa-map-marker" aria-hidden="true"></i></div>
+	                </label>
+	            </a>
+	        </li>
+
+	        <li>
+	            <a onclick="" style="text-decoration: none;" id="see-items-btn">
+	                <label>
+	                    <div class="icon" ><i class="fa fa-key" aria-hidden="true"></i></div>
+	                </label>
+	            </a>
+	        </li>
+
+	        <li>
+	            <a style="text-decoration: none;" id="see-phone-btn">
+	                <label>
+	                    <div class="icon" ><i class="fa fa-mobile" aria-hidden="true"></i></div>
+	                </label>
+	            </a>
+	        </li>
+
+	    </ul>
+	</div>
+
+	<!-- clock  -->
+	<div class="clock">
+	    <div class="hour">
+	        <div class="hr" id="hr"></div>
+	    </div>
+	    <div class="min">
+	        <div class="mn" id="mn"></div>
+	    </div>
+	    <div class="sec">
+	        <div class="sc" id="sc"></div>
+	    </div>
+
+	    <h4 class="am-pm"><span class="A-P-span">A</span> <span class="M-span">M</span></h4>
+	</div>
+
+	<!-- MAP VIEW  -->
+	<div class="map-div">
+	    <img src="./imgs/pin.png" id="marker-map-img">
+	    <div class="map moving-glow">
+	        <img src="./imgs/map1.png" id="map-img">
+	    </div>
+
+	    <!-- 5:31pm -->
+	    <div class="house-juls" title="YOUR HOME">
+	        
+	    </div>
+
+	    <div class="house-jim" title="JIM's HOUSE" onclick="onClickJimHouse()">
+	        
+	    </div>
+
+	</div>
+
+	<!-- the inventory title  -->
+	<div class="inventory-div">
+	    <h4 id="inventory-txt">INVENTORY</h4>
+	</div>
+
+	<!-- INVENTORY VIEW -->
+	<div class="items-div">
+	        <ul>
+	            <li>
+	                <label>
+	                    <input type="checkbox" name="" class="checkboxes">
+	                    <div class="icon-box">
+	                        <i class="fa fa-book" aria-hidden="true"></i>
+	                    </div>
+	                </label>
+	            </li>
+
+	            <li>
+	                <label>
+	                    <input type="checkbox" name="" class="checkboxes">
+	                    <div class="icon-box">
+	                        <i class="fa fa-puzzle-piece" aria-hidden="true"></i>
+	                    </div>
+	                </label>
+	            </li>
+
+	            <li>
+	                <label>
+	                    <input type="checkbox" name="" class="checkboxes">
+	                    <div class="icon-box">
+	                        <i class="fa fa-money" aria-hidden="true"></i>
+	                    </div>
+	                </label>
+	            </li>
+
+	            <li>
+	                <label>
+	                    <input type="checkbox" name="" class="checkboxes">
+	                    <div class="icon-box">
+	                        <i class="fa fa-flask" aria-hidden="true"></i>
+	                    </div>
+	                </label>
+	            </li>
+
+	            <li>
+	                <label>
+	                    <input type="checkbox" name="" class="checkboxes">
+	                    <div class="icon-box">
+	                        <i class="fa fa-tint" aria-hidden="true"></i>
+	                    </div>
+	                </label>
+	            </li>
+
+	            <li>
+	                <label>
+	                    <input type="checkbox" name="" class="checkboxes">
+	                    <div class="icon-box">
+	                        <i class="fa fa-fire" aria-hidden="true"></i>
+	                    </div>
+	                </label>
+	            </li>
+
+	            <li>
+	                <label>
+	                    <input type="checkbox" name="" class="checkboxes">
+	                    <div class="icon-box">
+	                        <i class="fa fa-thermometer-half" aria-hidden="true"></i>
+	                    </div>
+	                </label>
+	            </li>
+
+	            <li>
+	                <label>
+	                    <input type="checkbox" name="" class="checkboxes">
+	                    <div class="icon-box">
+	                        <i class="fa fa-hourglass-end" aria-hidden="true"></i>
+	                    </div>
+	                </label>
+	            </li>
+
+	            <li>
+	                <label>
+	                    <input type="checkbox" name="" class="checkboxes">
+	                    <div class="icon-box">
+	                        <i class="fa fa-bomb" aria-hidden="true"></i>
+	                    </div>
+	                </label>
+	            </li>
+
+	            <li>
+	                <label>
+	                    <input type="checkbox" name="" class="checkboxes">
+	                    <div class="icon-box">
+	                        <i class="fa fa-map" aria-hidden="true"></i>
+	                    </div>
+	                </label>
+	            </li>
+	        </ul>
+	</div>
+
+	<div class="reminder-div-2">
+	    <img src="./imgs/alert.png" id="alert-img">
+	    <h4>Turn off your <span class="span-orig">Phone</span> first before leaving the Phone View!</h4>
+	</div>
+
+	<div class="mobile">
+	        <div class="mobile-top"></div>
+
+	        <div class="mobile-bottom">
+	            <div class="power-btn">
+	                
+	            </div>
+
+	            <div class="phone-return-div">
+	                <i class="fa fa-chevron-left" aria-hidden="true"></i>
+	            </div>
+
+	        </div>
+
+	        <div class="screen">
+
+	            <img src="./imgs/phoneBg1.jpg" id="phone-img">
+
+	            <h2 id="phone-time">10:40<span>AM</span><br></h2>
+	            <h3 id="phone-date"> 5th June, 2017</h3>
+
+	            <ul>
+
+	                <li><i class="fa fa-phone" aria-hidden="true"></i></li>
+
+	                <li>
+	                    <i class="fa fa-comment-o" aria-hidden="true" id="message-icon"></i>
+	                    <div class="notif-div">
+	                        <h4 id="notif-txt">1</h4>
+	                    </div>
+	                </li>
+
+	                <li><i class="fa fa-picture-o" aria-hidden="true"></i></li>
+
+	                <li><i class="fa fa-camera" aria-hidden="true"></i></li>
+
+	            </ul>
+
+	            <!-- differents screen -->
+	            <div class="message-div">
+
+	                <div class="convo-1">
+	                    <img src="./imgs/student.png" id="friend-1-img"><!-- friend one image -->
+	                    <h4 id="friend-1-name">Friend 1</h4>
+	                    <div class="notif-div-convo-1">
+	                        <h4 id="notif-txt-convo-1">1</h4>
+	                    </div>
+	                </div>
+	                <div class="friend-1">
+	                    <h4>7:00am</h4>
+	                    <hr id="hr-1"><hr id="hr-2">
+	                    <img src="./imgs/student.png" id="friend-1-img-msg"><!-- friend one image -->
+	                    <div class="message-bar">
+	                        <p>
+	                            Hey Juls! You ready for school today? I’ll wait for you in our front door. See yah!
+	                        </p>
+	                    </div>
+	                </div>
+
+	                <div class="convo-2">
+	                    <img src="./imgs/student.png" id="friend-2-img"><!-- friend two image -->
+	                    <h4 id="friend-2-name">Friend 2</h4>
+	                    <div class="notif-div-convo-2">
+	                        <h4 id="notif-txt-convo-2">1</h4>
+	                    </div>
+	                </div>
+	                <div class="friend-2">
+	                    <h4>8:00am</h4>
+	                    <hr id="hr-1"><hr id="hr-2">
+	                    <img src="./imgs/student.png" id="friend-2-img-msg"><!-- friend two image -->
+	                    <div class="message-bar">
+	                        <p>
+	                            Hey man! You ready for tonight? It's gonna be a looooooong night for sure. See ya later bro!
+	                        </p>
+	                    </div>
+	                </div>
+
+	            </div>
+
+	        </div>
+	</div>
+
+	<!-- END CONSTANT DISPLAY IN EVERY PAGE/SCREEN -->
+
+	<main class="main">
+	    <div class="room">
+	        <img src="./imgs/notebook.jpg" id="room" >
+	    </div>
+
+	    <img src="./imgs/juls1.png" id="character-juls">
+
+	    <!--Nilagyan ko ng id yung 'p' nito-->
+	    <div class="characters-message-bar">
+	        <p id="charactext">Jim : Bro what took you so long! It’s almost 8 o’clock!
+	        </p>
+	        <div class="elipsis">
+	            <span style="--i:1">.</span>
+	            <span style="--i:2">.</span>
+	            <span style="--i:3">.</span>
+	        </div>
+	    </div>
+
+	</main>
+
+
+	<div class="equation-screen">
+		<h4 id="instruction">Solve the following equation:</h4><br>
+		<h4 class="problems" id="prob-1">1. (3x – 7)(5x + 6)</h4>
+		<h4 class="problems" id="prob-2">2. (6x – 7y)(4x – 3y)</h4>
+		<h4 class="problems" id="prob-3">3. (8x – 5)(4x – 7)</h4><br>
+
+		<h4 id="instruction">Answer: <span>Note: Use number "2" for squared symbol</span></h4><br>
+		<h4 class="answers" id="ans-1">1.</h4>
+		<h4 class="answers" id="ans-2">2.</h4>
+		<h4 class="answers" id="ans-3">3.</h4>
+
+		<input type="text" class="answer-input" id="answer-1" onkeyup="onKeyUpInput1()">
+		<input type="text" class="answer-input" id="answer-2" onkeyup="onKeyUpInput2()">
+		<input type="text" class="answer-input" id="answer-3" onkeyup="onKeyUpInput3()">
+
+		<!-- question mark  -->
+		<img src="./imgs/question.png" id="question-img">
+	</div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.js"></script>  
+<script type="text/javascript" src="page6.js"></script>
+</body>
+</html>
