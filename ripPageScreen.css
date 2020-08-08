@@ -1,0 +1,81 @@
+*{
+	margin:0px;
+	padding: 0px;
+}
+
+body{
+	width:100%;
+	height: 650px;
+	background: radial-gradient(#4d4d4d,  #000);
+	overflow: hidden;
+}
+.card-1{
+	position: absolute;
+	top:30px;
+	left:500px;
+	width: 380px;
+	height: 600px;
+	transform-style: preserve-3d;
+}
+
+.card-1 .face{
+	position: absolute;
+	top:0;
+	left:0;
+	width:100%;
+	height: 100%;
+	transform-style: preserve-3d;
+	backface-visibility: hidden;
+	transition: 2s ease-in-out;
+	transform: perspective(500px) rotateY(0deg);
+	cursor: grab;
+}
+
+.card-1 .face.front{
+	/*background: #ff137d;*/
+	background: url(./imgs/ripPageFront.png);
+	background-size: 100% 100%;
+}
+
+
+.card-1:hover .face.front{
+	transform: perspective(500px) rotateY(-180deg);
+}
+
+.card-1 .face.back{
+	background: url(./imgs/ripPageBack.png);
+	background-size: 100% 100%;
+	color: #fff;
+	transform: perspective(500px) rotateY(-180deg);
+}
+
+.card-1:hover .face.back{
+	transform: perspective(500px) rotateY(-360deg);
+}
+
+
+.front-txt{
+	position: absolute;
+	top:50px;
+	left:55px;
+	height: 83%;
+	width:74%;
+	font-size: 17.7pt;
+	letter-spacing: 1px;
+	color:#595959;
+	font-family: Poor Richard;
+	font-style: italic;
+}
+
+.back-txt{
+	position: absolute;
+	top:45px;
+	left:45px;
+	height: 83%;
+	width:74%;
+	font-size: 17.7pt;
+	color:#595959;
+	letter-spacing: 1px;
+	font-family: Poor Richard;
+	font-style: italic;
+}
