@@ -349,8 +349,15 @@ function spaceBarPressed(event){
 	if(ellipsis_Is_visible){
 		var spaceBarCode = event.keyCode
 		if(spaceBarCode == 32 && done_read_atJimsHouse){
-            msgBar_P.textContent = "JULS: I forgot to set up my alarm last night. Just shut up and let’s go!"
-            //tapos after nito , change background na , dun sa School
+			msgBar_P.textContent = "JULS: I forgot to set up my alarm last night. Just shut up and let’s go!"
+			msgBar_P.textContent = "Alvin:Come on! let's hurry"
+			//tapos after nito , change background na , dun sa School
+			document.getElementById("room").style.display = "none";//09/08/2020 3:32 pm - diko alam pano ka nagpapalit ng scenes HAHAHA kaya nag experiment ako HAHA
+			setTimeout(function(){document.getElementById("school-front").style.display = "inline"; //09/08/2020 3:32 pm - diko alam pano ka nagpapalit ng scenes HAHAHA kaya nag experiment ako HAHA
+			msgBar_P.textContent = "JULS: woosh! I'm glad we made it on time" //09/08/2020 3:32 pm - diko alam pano ka nagpapalit ng scenes HAHAHA kaya nag experiment ako HAHA
+		},3000)
+			
+
 		}
 	}
 }
