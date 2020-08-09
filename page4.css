@@ -15,11 +15,12 @@ body{
 }
 
 #room{
+	position: absolute; /* 5:00pm para maging full view yung bahay ni alvin*/
 	width: 100%;
 	height: 100%;
 	z-index: -1;
 	
-	filter: blur(3px); 
+	filter: blur(0px); 
 }/* inedit ko opacity asHAHA*/
 
 /*CONSTANT DISPLAY IN EVERY PAGE/SCREEN*/
@@ -232,8 +233,8 @@ body{
 
 #marker-map-img{
 	position: absolute;
-	top:240px;
-	left: 395px;
+	top:200px;
+	left: 422px;
 	z-index: 2;
 	width:30px;
 	height: 30px;
@@ -915,14 +916,6 @@ audio{
 	width:20%;
 	height: 500px;
 }
-/*#character-sec{
-	position: absolute;
-	top:157px;
-	right:-50px;
-	width:40%;
-	height: 500px;
-	transform: rotateY(180deg);
-}*/
 
 .characters-message-bar{
 	position: absolute;
@@ -970,6 +963,43 @@ audio{
 		transform: translateY(0px);
 	}
 }
+
+.house-alvin{
+	position: absolute;
+	bottom:55px;
+	left:415px;
+	width:40px;
+	height: 40px;
+	z-index: 2;
+	cursor: pointer;
+
+	/* visibility: hidden; */
+}
+.house-juls{
+	position: absolute;
+	bottom:10px;
+	left:390px;
+	width:40px;
+	height: 40px;
+	z-index: 2;
+
+	cursor: pointer;
+
+	/* visibility: hidden; */
+}
+/* 8-9-2020 5:12pm */
+.school-location{
+	position: absolute;
+	top:130px;
+	left:220px;
+	width:50px;
+	height: 40px;
+	z-index: 2;
+	cursor: pointer;
+
+	visibility: hidden;
+}
+
 /*Para sa school 09/08/2020 3:33pm */
 #school-front{
 	display: none;
