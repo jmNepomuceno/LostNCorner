@@ -908,6 +908,13 @@ audio{
 	height: 500px;
 }
 
+#character-alvin{
+	position: absolute;
+	top:240px;
+	left:1000px;
+	width:20%;
+	height: 500px;
+}
 /*#character-sec{
 	position: absolute;
 	top:157px;
