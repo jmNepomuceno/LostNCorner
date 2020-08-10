@@ -347,9 +347,10 @@ let done_Alvin_message_1 = true
 let done_Juls_message_1 = false
 let done_Alvin_message_2 = false
 let is_school_found = false
-let at_school = false
+let enter_school = false
 
 const schoolLocationDiv = document.querySelector('.school-location')
+const enterTheSchool = document.querySelector('.enter-school-div')
 
 function spaceBarPressed(event){
 	if(ellipsis_Is_visible){
@@ -358,11 +359,6 @@ function spaceBarPressed(event){
 			msgBar_P.textContent = "JULS: I forgot to set up my alarm last night. Just shut up and let’s go!"
 			done_Alvin_message_1 = false
 			done_Juls_message_1 = true
-		// roomImg.style.display = "none";//09/08/2020 3:32 pm - diko alam pano ka nagpapalit ng scenes HAHAHA kaya nag experiment ako HAHA
-		// 	setTimeout(function(){document.getElementById("school-front").style.display = "inline"; //09/08/2020 3:32 pm - diko alam pano ka nagpapalit ng scenes HAHAHA kaya nag experiment ako HAHA
-		// 	msgBar_P.textContent = "JULS: woosh! I'm glad we made it on time" //09/08/2020 3:32 pm - diko alam pano ka nagpapalit ng scenes HAHAHA kaya nag experiment ako HAHA
-		// },3000)
-		//4:30pm
 		}else if(spaceBarCode == 32 && done_Juls_message_1){
 			msgBar_P.textContent = "Alvin: Come on! let's hurry"
 			done_Juls_message_1 = false
@@ -382,9 +378,7 @@ function spaceBarPressed(event){
 					roomImg.src = "./imgs/Schoolbg.jpg"
 					roomImg.style.opacity = "1"
 					msgBar_P.textContent = "JULS: Woosh! I'm glad we made it on time. Let’s go meet up some new friends!"
-					at_school = true
-					elipsis.style.visibility = "visible"
-					ellipsis_Is_visible = true
+					enterTheSchool.style.visibility = "visible"
 					clearInterval(changeRoomImgVar)
 				}else{
 					roomImg.style.opacity = "0." + changeRoomImgInt
@@ -392,7 +386,7 @@ function spaceBarPressed(event){
 				changeRoomImgInt -= 1
 			},200)
 			is_school_found = false
-		}else if(spaceBarCode == 32 && at_school){
+		}else if(spaceBarCode == 32 && enter_school){
 			location.href = "page5.html"
 		}
 	}
@@ -401,6 +395,12 @@ function spaceBarPressed(event){
 schoolLocationDiv.addEventListener('click', function(){
 	msgBar_P.textContent = "Juls: How come did you forget the way? Come I'll lead the way."
 	is_school_found = true
+	elipsis.style.visibility = "visible"
+	ellipsis_Is_visible = true
+},false)
+
+enterTheSchool.addEventListener('click' , function(){
+	enter_school = true
 	elipsis.style.visibility = "visible"
 	ellipsis_Is_visible = true
 },false)

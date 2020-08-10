@@ -1001,7 +1001,7 @@ audio{
 }
 
 /*Para sa school 09/08/2020 3:33pm */
-#school-front{
+/* #school-front{
 	display: none;
 	width: 100%;
 	height: 100%;
@@ -1028,6 +1028,16 @@ audio{
 	background: #020c17; 
 	
 	
+} */
+
+.enter-school-div{
+	position: absolute;
+	top:388px;
+	left:823px;
+	width:40px;
+	height:40px;
+	cursor: pointer;
+	visibility: hidden;
 }
 
 /*END CONSTANT DISPLAY IN EVERY PAGE/SCREEN*/

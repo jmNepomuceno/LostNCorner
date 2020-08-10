@@ -57,6 +57,23 @@ const  hr =document.querySelector('#hr');
 const  mn =document.querySelector('#mn');
 const  sc =document.querySelector('#sc');
 
+// ********************NEWLY CONSTANT VARAIBLES********************
+
+const main = document.querySelector('.main')
+const elipsis = document.querySelector('.elipsis')
+var ellipsis_Is_visible = true
+
+//all message bar and its child paragraph
+const msgBar_P = document.querySelector('.characters-message-bar p')
+
+//room ID
+const roomImg = document.querySelector('#room')
+
+//phone date text 
+const phoneTime = document.getElementById('phone-time')
+
+
+
 let clockVar;
 
 let hh = 7;
@@ -81,7 +98,7 @@ if (localStorage.getItem("hours") !== null) {
 
 function clockLoad(){
 	clockVar = setInterval(function(){
-			//clearInterval(clockVar)
+			clearInterval(clockVar)
 			ss++;
 
 			if(ss == 360){
@@ -324,247 +341,48 @@ mapBtn.addEventListener('click', function(){
 
 /**************************END CONSTANT DISPLAY IN EVERY PAGE/SCREEN**************************/
 
-const body = document.getElementsByTagName('BODY')
-const main = document.querySelector('.main')
-const elipsis = document.querySelector('.elipsis')
-var ellipsis_Is_visible = false // para mahandle yung , gagana lang yung space bar pressed pag visibile yung ellipsis
+//page5 variables
+const yesNoBtn = document.querySelector('.yes-no-btn')
+const yesBtn = document.getElementById('yes-btn')
+const noBtn = document.getElementById('no-btn')
 
-//reminder 1 / Conversation Box
-const reminderDiv_1 = document.querySelector('.reminder-div-1')
-//reminder 3 / Ellipsis
-const reminderDiv_3 = document.querySelector('.reminder-div-3')
-
-// all reminder OKAY CLICK and SPAN ORIG
-const okClick = document.querySelectorAll('.okay-click')
-const spanOrig = document.querySelectorAll('.span-orig')
-
-//all message bar and its child paragraph
-const msgBar_P = document.querySelector('.characters-message-bar p')
-
-//taking a bath variables
-const bathDiv = document.querySelector('.screen-taking-bath')
-const bathDoorDiv = document.getElementById("bath")
-const bedDiv = document.getElementById("obj1")
-const compuDiv = document.getElementById("obj2")
-const dateDiv = document.getElementById("obj3")
-const wagDiv = document.getElementById("obj4")
-//inadd ko 05/08/2020-12:58 pm
-
-//room ID
-const roomImg = document.querySelector('#room')
-
-//phone date text 
-const phoneTime = document.getElementById('phone-time')
-
-//9:33am
-//kitchen divs and varibles
-const refrigirator = document.getElementById('refrigirator')
-const breakfastMeal = document.getElementById('breakfast-meal')
-const breakfastMealScreen = document.getElementById('breakfast-meal-screen')
-//to handle the specific message for every SPACE BAR pressed
-let done_bath = false
-let done_open_ref = false
-let done_eat_screen = false
-
-//screen para sa eating breakfast
-const eatBfastDiv = document.querySelector('.screen-eating-breakfast')
-
-//house of JIM div
-const houseAlvin = document.querySelector('.house-alvin')
-
-//reminder 1 / Conversation Box
-okClick[0].addEventListener('click' , function(){
-	reminderDiv_1.style.visibility = "hidden"
-	msgBar_P.style.visibility = "visible"
-
-	//dito magiging clickable na yung door
-	document.getElementById("room").style.filter = "blur(0px)";//para mawala yung blur pag nag hahanap na siya 05/08/2020
-	bathDoorDiv.style.pointerEvents = "auto"
-	bedDiv.style.pointerEvents = "auto"
-	compuDiv.style.pointerEvents = "auto"
-	dateDiv.style.pointerEvents = "auto"
-	wagDiv.style.pointerEvents = "auto"
-}, false)
-
-	
-//reminder 3 / Ellipsis
-okClick[1].addEventListener('click' , function(){
-	reminderDiv_3.style.visibility = "hidden"
-}, false)
-
+let done_JM_message = true
+let done_Juls_message = false
+let clicked_yes = false
+let yes_done_JM_message2 = false
+let yes_done_JM_message3 = false
 
 function spaceBarPressed(event){
 	if(ellipsis_Is_visible){
 		var spaceBarCode = event.keyCode
-		if(spaceBarCode == 32 && done_bath){
-			reminderDiv_3.style.visibility = "hidden"
-			msgBar_P.textContent = "Hmm what do we have for breakfast?"
-			elipsis.style.visibility = "hidden"
-			ellipsis_Is_visible = false
-
-			roomImg.style.filter = "blur(0px)";//para mawala yung blur pag nag hahanap na siya 05/08/2020
-			//tas ikaw bahala kung change ka ng background na kusina o pwede na lang din naman ikaw mag lagay ng
-			// pagkain dun sa table tabi ng laptop
-
-			
-			//lipat ko yung pag change ng bg image , kapag na press na nya yung space bar 6:01pm
-			roomImg.src="imgs/kitchen.jpg";//nag lagay ako ng kitchen bg, palitan ko parin to HAHA
-
-			//make ref clickable
-			refrigirator.style.visibility = "visible"
-		}
-
-		if(spaceBarCode == 32 && done_open_ref){
-			msgBar_P.textContent = "Alright, that looks delicious! Time to eat."
-			breakfastMeal.style.visibility = "visible"
-
-			elipsis.style.visibility = "hidden"
-			ellipsis_Is_visible = false
-
-			roomImg.style.filter = "blur(0px)";
-		}
-
-		//  5:25 pm
-		// tong mga done_eat_screen pala nato , para mag i iba yung mga kalalabasan , kapag nag press ng SPACE BAR
-
-		if(spaceBarCode == 32 && done_eat_screen){
-			elipsis.style.visibility = "hidden"
-			ellipsis_Is_visible = false
-
-			roomImg.src = "./imgs/mainroom.png"
-			roomImg.style.filter = "blur(3px)";
-
-			msgBar_P.textContent = "Alright, I think I am good to go! Oh damn, I almost forgot, I need to go to pick up Alvin."
-
-			// tas lalagyan ko ng ng transparent div saka title yung bahay ni JIM , para ma cli click nila , tas punta na sa page4.html
-			houseAlvin.style.visibility = "visible"
-		}
-	}
-}
-
-// 8:43am
-// taking a bath function
-
-function bathroom(){
-	// location.href="task.html";
-	main.style.visibility = "hidden"
-	bathDiv.style.visibility = "visible"
-
-	bathBar()
-}// para sa bathroom 04/08/2020 8:19pm
-
-function bathBar(){
-	let counter = 0;
-    let vi;
-    vi = setInterval(function(){
-    	counter +=1;
-        document.getElementById("progress-bar").value = counter;
-        //console.log(counter);
-        if(counter == 100){ 
-			clearInterval(vi); 
-			bathDiv.style.visibility = "hidden"
-			main.style.visibility = "visible"
-
-			elipsis.style.visibility = "visible"
-			ellipsis_Is_visible = true
-			done_bath = true
-
-			//tas lalabas na yung reminder , kung ano gagawin nila pag may ellipsis na
-			reminderDiv_3.style.visibility = "visible"
-
-			//tapos pag balik dun sa main screen , di na clickable yung pinto
-			bathDoorDiv.style.pointerEvents = "none"
-			bedDiv.style.pointerEvents = "none"
-			compuDiv.style.pointerEvents = "none"
-			dateDiv.style.pointerEvents = "none"
-			wagDiv.style.pointerEvents = "none" //inadd ko 05/08/2020-12:58 pm
-
-			//9:01am
-			//gawing kong mga visibility = hidden yung mga div na to , baka kasi mag patong sila ng mga div na 
-			// ilalagay natin sa kitchen background
-			bathDoorDiv.style.visibility = "hidden"
-			bedDiv.style.visibility = "hidden"
-			compuDiv.style.visibility = "hidden"
-			dateDiv.style.visibility = "hidden"
-			wagDiv.style.visibility = "hidden" 
-
-			
-			document.getElementById("room").style.filter = "blur(3px)";// 05/08/2020
+		if(spaceBarCode == 32 && done_JM_message){
+            msgBar_P.textContent = "Juls: Oh that’s great. Nice to meet you man. I’m Juls."
+            done_JM_message = false
+            done_Juls_message = true
+        }else if(spaceBarCode == 32 && done_Juls_message){
+            msgBar_P.textContent = "JM: My friend Allen is throwing a party tonight at his place, so we will be seeing you there?"
+            done_Juls_message = false
+            elipsis.style.visibility = "hidden"
+            ellipsis_Is_visible = false
+            yesNoBtn.style.visibility = "visible"
+        }else if(spaceBarCode == 32 && clicked_yes){
+            msgBar_P.textContent = "JM: Oh so you guys are friends, I already asked him a while go! That’s great the more the merrier right"
+            clicked_yes = false
+            yes_done_JM_message2 = true
+        }else if(spaceBarCode == 32 && yes_done_JM_message2){
+            msgBar_P.textContent = "JM: Let me get your number, so I can text you my address."
+            yes_done_JM_message2 = false
+            yes_done_JM_message3 = true
+            elipsis.style.visibility = "hidden"
+            ellipsis_Is_visible = false
         }
-	},50);
-}
-//para sa message pag nagclick ng ibang bagay
-var reset;// pang call ng pang reset ng text
-function restrictionOnObject(){
-	
-	//document.getElementById("charactext").innerHTML="Cant do that now, i'll be late for school";
-	//yung document.getElementById("charactext") , nakavariable na yun , line 331
-	msgBar_P.textContent = "Cant do that now, i'll be late for school"
-	reset = setTimeout(restext,1000);
+    }
 }
 
-function restext(){
-	msgBar_P.textContent ="Oh crap, its 7 am already, I need to be quick. I don’t want to be late in my first day! First, I need to take a bath.";
-}
-function seedate(){
-	msgBar_P.textContent = "Today is June 5, 2017 huh";
-	reset = setTimeout(restext,1000);
-}//05/08/2020 - 12:34pm
-
-//9:36am
-function onClickRef(){
-	elipsis.style.visibility = "visible"
-	ellipsis_Is_visible = true
-	done_open_ref = true
-
-	//remove pointer events and visibility to hidden
-	refrigirator.style.pointerEvents = "none"
-	refrigirator.style.visibility = "hidden"
-}
-
-function onClickBfastMeal(){
-	eatBfastDiv.style.visibility = "visible"
-	main.style.visibility = "hidden"
-
-	eatingBfastScreen()
-}
-
-function eatingBfastScreen(){
-	let counter = 0;
-	let imgCont = 0
-    let vi;
-    vi = setInterval(function(){
-    	counter +=1;
-		document.getElementById("progress-bar-bfast").value = counter;
-		//console.log(counter);
-
-		//5:19pm para maging tuloy tuloy lang yung progress bar , kagaya nung sa taking a bath.
-		if(counter % 20 == 0){
-			imgCont += 1
-			breakfastMealScreen.src = "./imgs/bfast-" + imgCont +"t"+".png"
-			breakfastMealScreen.style.width = "150%"
-			breakfastMealScreen.style.left = "-170px"
-		}
-
-        //console.log(counter);
-        if(counter == 100){ 
-			clearInterval(vi);
-			eatBfastDiv.style.visibility = "hidden"//pagtapos kumain 2:41pm
-			main.style.visibility = "visible"//pagtapos kumain 2:41pm
-			document.getElementById("breakfast-meal").style.display="none";//pagtapos kumain 3:00pm
-			// ay hayop oo nga no , may DISPLAY NONE pala amputa HAHAHAHAHAH nag tya tyaga ako sa visibility = hidden ganun HAHAHAHA
-			msgBar_P.textContent = "Aight, That's delicious. Time to go";//pagtapos kumain 3:00pm
-
-
-			//5:23pm
-			elipsis.style.visibility = "visible"
-			ellipsis_Is_visible = true
-			done_eat_screen = true
-
-        }
-	},50);// binalik ko an sa 50 , tas yung sa html na , max = 100.
-}
-//road to page4 na HAHHAHHAH
-function onClickJimHouse(){
-	location.href = "page4.html"
-}
+yesBtn.addEventListener('click' , function(){
+    msgBar_P.textContent = "Juls: Oh yeah sure, you don’t mind if I bring a plus one? He is Jim, he is also one of our classmate here."
+    clicked_yes = true
+    elipsis.style.visibility = "visible"
+    ellipsis_Is_visible = true
+    yesNoBtn.style.display = "none"
+}, false)
