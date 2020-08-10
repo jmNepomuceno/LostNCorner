@@ -9,6 +9,51 @@ let pwrBtnOn = false;
 let mobileOpen = false;
 const phoneReturnBtn = document.querySelector('.phone-return-div');
 
+//phone screen contact
+const phoneIcon = document.getElementById('phone-icon');
+const phoneContactDiv = document.querySelector('.contact-div')
+const phoneHeaderContact = document.getElementById('header-contacts-txt')
+const phoneBodyContact = document.querySelector('.body-contacts')
+
+const phonePhoneLog = document.getElementById('header-phone-txt')
+const phoneBodyPhoneLog = document.querySelector('.body-phoneLog')
+const phoneLabelDiv = document.querySelector('.body-phoneLog #keypad-txtbox')
+const phoneKeypadNumber = []
+for(let i = 0; i < 9; ++i){
+	phoneKeypadNumber[i] = document.getElementById(i)
+}
+
+phoneIcon.addEventListener('click', function(){
+	phoneContactDiv.style.visibility = "visible"
+	phoneHeaderContact.style.color = "green"
+	phoneBodyContact.style.visibility = "visible"
+},false)
+
+phoneHeaderContact.addEventListener('click', function(){
+	phonePhoneLog.style.color = "black"
+	phoneBodyPhoneLog.style.visibility = "hidden"
+
+	phoneHeaderContact.style.color = "green"
+	phoneBodyContact.style.visibility = "visible"
+},false)
+
+phonePhoneLog.addEventListener('click', function(){
+	phonePhoneLog.style.color = "green"
+	phoneBodyPhoneLog.style.visibility = "visible"
+
+	phoneLabelDiv.focus()
+
+	phoneHeaderContact.style.color = "black"
+	phoneBodyContact.style.visibility = "hidden"
+},false)
+
+function inputKeypadPhone(event){
+	let numCode = event.keyCode
+	let numString = String.fromCharCode(numCode)
+
+	phoneLabelDiv.textContent = phoneLabelDiv.textContent + numString
+}
+
 //variables for message div
 const msgIcon = document.getElementById('message-icon');
 const msgNotif = document.querySelector('.notif-div');
@@ -219,6 +264,11 @@ $(document).ready(function(){
 		//convo -2
 		convo_two.style.visibility = "hidden"
 		frnd_two.style.visibility = "hidden"
+
+		//contact div
+		phoneContactDiv.style.visibility = "hidden"
+		phoneBodyContact.style.visibility = "hidden"
+		phoneBodyPhoneLog.style.visibility = "hidden"
 	})
 })
 
@@ -249,6 +299,11 @@ phoneReturnBtn.addEventListener('click' , function(){
 	//convo -2
 	convo_two.style.visibility = "hidden"
 	frnd_two.style.visibility = "hidden"
+
+	//contact div
+	phoneContactDiv.style.visibility = "hidden"
+	phoneBodyContact.style.visibility = "hidden"
+	phoneBodyPhoneLog.style.visibility = "hidden"
 
 },false)
 
@@ -342,15 +397,22 @@ mapBtn.addEventListener('click', function(){
 /**************************END CONSTANT DISPLAY IN EVERY PAGE/SCREEN**************************/
 
 //page5 variables
+
+//yes no promt variables
 const yesNoBtn = document.querySelector('.yes-no-btn')
 const yesBtn = document.getElementById('yes-btn')
 const noBtn = document.getElementById('no-btn')
 
+//convo variables
 let done_JM_message = true
 let done_Juls_message = false
 let clicked_yes = false
 let yes_done_JM_message2 = false
 let yes_done_JM_message3 = false
+
+// need to click users phone number div
+const clickMyNumber = document.querySelector('.click-myNumber-div')
+let done_getting_number = false
 
 function spaceBarPressed(event){
 	if(ellipsis_Is_visible){
@@ -374,7 +436,15 @@ function spaceBarPressed(event){
             yes_done_JM_message2 = false
             yes_done_JM_message3 = true
             elipsis.style.visibility = "hidden"
-            ellipsis_Is_visible = false
+			ellipsis_Is_visible = false
+			
+			phoneIcon.style.pointerEvents = "auto"
+		}
+		else if(spaceBarCode == 32 && done_getting_number){
+            msgBar_P.textContent = "JM: Okay cool! Well see ya later at the party."
+			done_getting_number = false
+			elipsis.style.visibility = "hidden"
+			ellipsis_Is_visible = false
         }
     }
 }
@@ -386,3 +456,11 @@ yesBtn.addEventListener('click' , function(){
     ellipsis_Is_visible = true
     yesNoBtn.style.display = "none"
 }, false)
+
+clickMyNumber.addEventListener('click', function(){
+	msgBar_P.textContent = "Juls: Yeah no problem. Here."
+	done_getting_number = true
+	elipsis.style.visibility = "visible"
+	ellipsis_Is_visible = true
+	clickMyNumber.style.display = "none"
+})

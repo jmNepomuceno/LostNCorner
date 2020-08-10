@@ -216,7 +216,7 @@
 
                     <ul>
 
-                        <li><i class="fa fa-phone" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-phone" aria-hidden="true" id="phone-icon"></i></li>
 
                         <li>
                             <i class="fa fa-comment-o" aria-hidden="true" id="message-icon"></i>
@@ -272,6 +272,45 @@
 
                     </div>
 
+                    <div class="contact-div">
+                        <h4 id="header-phone-txt">Phone</h4>
+                        <h4 id="header-contacts-txt">Contacts</h4>
+                        <hr id="header-hr">
+
+                        <div class="body-phoneLog">
+                            <input type="text" id="keypad-txtbox" onkeypress="inputKeypadPhone(event)">
+                            <table>
+                                <tr>
+                                    <td id="1">1</td>
+                                    <td id="2">2</td>
+                                    <td id="3">3</td>
+                                </tr>
+                                <tr>
+                                    <td id="4">4</td>
+                                    <td id="5">5</td>
+                                    <td id="6">6</td>
+                                </tr>
+                                <tr>
+                                    <td id="7">7</td>
+                                    <td id="8">8</td>
+                                    <td id="9">9</td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td id="0">0</td>
+                                    <td></td>
+                                </tr>
+                            </table>
+                        </div>
+
+                        <div class="body-contacts">
+                            <h4>My Number - 09480288229</h4>
+                        </div>
+
+                        <!-- user need to click juls phone number -->
+                        <div class="click-myNumber-div"></div>
+                    </div>
+
                 </div>
         </div>
 
@@ -305,6 +344,8 @@
             </div>
         </main>
     </body>
+
+    <!-- maglagay ako ng isang screen dun sa phone , para sa phone number ni juls 12:10pm -->
 
     <script src="https://code.jquery.com/jquery-3.3.1.js"></script>  
     <script type="text/javascript" src="page5.js"></script>
