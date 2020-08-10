@@ -1059,12 +1059,12 @@ audio{
 	height: 500px;
 }
 
-#character-alvin{
+#character-JM{
 	position: absolute;
-	top:240px;
-	left:1000px;
-	width:20%;
-	height: 500px;
+	top:160px;
+	left:991px;
+	width:28%;
+	height: 560px;
 }
 
 .characters-message-bar{
