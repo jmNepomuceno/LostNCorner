@@ -1,12 +1,13 @@
 *{
-    margin:0px;
-    padding:0px;
+	margin:0px;
+	padding: 0px;
+	box-sizing: border-box;
 }
 
 body{
 	width: 100%;
-	height: 500px;
-	
+	height: 100vh;
+
 	background-size: cover;
 	background-color: #111;
 	background-position: center;
@@ -17,7 +18,7 @@ body{
 #room{
 	position: absolute; /* 5:00pm para maging full view yung bahay ni alvin*/
 	width: 100%;
-	height: 100%;
+	height: 100vh;
 	z-index: -1;
 	
 	filter: blur(0px); 
@@ -117,10 +118,10 @@ body{
 /*CLOCK*/
 .clock{
 	position: absolute;
-	top:10px;
-	left:10px;
-	width:150px;
-	height: 150px;
+	top:2%;
+	left:1%;
+	width:12%;
+	height: 23%;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -138,7 +139,7 @@ body{
 
 .am-pm{
 	color:white;
-	font-size: 14pt;
+	font-size: 1vw;
 	margin-left:5px;
 }
 
@@ -205,7 +206,7 @@ body{
 	position: absolute;
 	top:50px;
 	/*right: 0;*/
-	right: -555px;
+	right: -50%;
 	width:35%;
 	height: 300px;
 	transition: 0.5s;
@@ -233,11 +234,11 @@ body{
 
 #marker-map-img{
 	position: absolute;
-	top:200px;
-	left: 422px;
+	top:80%;
+	left: 83%;
 	z-index: 2;
-	width:30px;
-	height: 30px;
+	width:6%;
+	height: 10%;
 	
 }
 
@@ -392,9 +393,9 @@ body{
 .mobile{
 	position: absolute;
 	top:200px;
-	right:-590px;
-	width:270px;
-	height: 400px;
+	right:-25%;
+	width:20%;
+	height:60%;
 	background:#020c17;
 	border:2px solid black;
 	border-top: 0;
@@ -406,9 +407,9 @@ body{
 
 .mobile-top{
 	position: absolute;
-	top:-52px;
+	top:-50px;
 	left:-2px;
-	width:100%;
+	width:101.5%;
 	height: 50px;
 	background: #efefef;
 	border-top-left-radius: 40px;
@@ -446,9 +447,9 @@ body{
 
 .mobile-bottom{
 	position: absolute;
-	bottom:-52px;
+	bottom:-50px;
 	left:-2px;
-	width:100%;
+	width:101.5%;
 	height: 50px;
 	background: #efefef;
 	border-bottom-left-radius: 40px;
@@ -508,11 +509,11 @@ body{
 
 #phone-time{
 	position: absolute;
-	top:20px;
-	left:60px;
+	top:5%;
+	left:17%;
 	color:#fff;
 	font-weight: 200;
-	font-size: 3.5em;
+	font-size: 4vw;
 	z-index:1;
 	transform: translateY(50px);
 	line-height: 0.4em;
@@ -523,10 +524,10 @@ body{
 
 #phone-date{
 	position: absolute;
-	top:80px;
+	top:15%;
 	color:#fff;
 	font-weight: 200;
-	font-size: 1.5em;
+	font-size: 2vw;
 	z-index:1;
 	line-height: 0.4em;
 	transition: 0.5s;
@@ -624,12 +625,23 @@ body{
 	visibility: hidden;
 }
 /*convo 1*/
+.message-div{
+	position: absolute;
+	width:100%;
+	height: 150%;
+	background: url(./imgs/messageBg.jpg);
+	background-size: 100% 100%;
+	background-position: cover;
+	z-index: 2;
+	visibility: hidden;
+}
+/*convo 1*/
 .convo-1{
 	position: absolute;
-	top:70px;
+	top:10%;
 	left:0;
 	width:100%;
-	height:70px;
+	height:12%;
 	border:1px solid #4d4d4d;
 	border-right: 0;
 	border-left: 0;
@@ -640,19 +652,19 @@ body{
 
 #friend-1-img{
 	position: absolute;
-	top:8px;
-	left:5px;
-	width:50px;
-	height: 50px;
+	top:13%;
+	left:2%;
+	width:20%;
+	height: 70%;
 	background:#fff;
 	border-radius: 50%;
 }
 
 #friend-1-name{
 	position: absolute;
-	top:15px;
-	left: 70px;
-	font-size: 24pt;
+	top:23%;
+	left: 30%;
+	font-size: 2.5vw;
 	font-family: Agency FB;
 	letter-spacing: 4px;
 	color:#4d4d4d;
@@ -660,10 +672,10 @@ body{
 
 .notif-div-convo-1{
 	position: relative;
-	top:20px;
-	left:230px;
-	width:30px;
-	height: 30px;
+	top:30%;
+	left:80%;
+	width:13%;
+	height: 45%;
 	background: red;
 	border-radius: 50%;
 	text-align: center;
@@ -671,7 +683,7 @@ body{
 
 #notif-txt-convo-1{
 	color:white;
-	font-size: 18pt;
+	font-size: 1.5vw;
 	font-family: consolas;
 	font-weight: 900;
 }
@@ -683,41 +695,41 @@ body{
 .friend-1{
 	position: absolute;
 	width: 100%;
-	height: 400px;
+	height: 90%;
 	visibility: hidden;
 }
 
 #friend-1-img-msg{
 	position: absolute;
-	top:40px;
-	left:5px;
-	width: 30px;
-	height: 30px;
+	top:12%;
+	left:2%;
+	width: 10%;
+	height: 5%;
 	background: white;
 	border-radius: 50%;
 }
 
 .friend-1 h4{
 	position: absolute;
-	font-size: 13pt;
-	font-size: consolas;
+	font-size: 1.5vw;
+	font-family: consolas;
 	background: #9fa0a2;
-	top:20px;
-	left:110px;
+	top:7%;
+	left:42%;
 	z-index: 1;
 }
 
 #hr-1{
 	position: absolute;
-	top:30px;
-	width:100px;
+	top:10%;
+	width:38%;
 	border:1px solid #404040;
 }
 
 #hr-2{
 	position: absolute;
-	top:30px;
-	width:95px;
+	top:10%;
+	width:30%;
 	right:0;
 	border:1px solid #404040;
 }
@@ -725,47 +737,49 @@ body{
 .message-bar{
 	position: absolute;
 	background: #FAD0C9FF;
-	top:70px;
-	left:30px;
-	width:100px;
-	height: 230px;
+	top:15%;
+	left:13%;
+	width:30%;
+	height: 40%;
 	border:1px solid #f49a8a;
 }
 
 .friend-1 .message-bar p{
 	font-family: consolas;
 	margin-left:5px;
+	font-size: 1vw;
 }
 /*end convo 1*/
 
 /*convo 2*/
 .convo-2{
 	position: absolute;
-	top:150px;
+	top:22.5%;
 	left:0;
 	width:100%;
-	height:70px;
+	height:12%;
 	border:1px solid #4d4d4d;
 	border-right: 0;
 	border-left: 0;
 	visibility: hidden;
+	cursor: pointer;
 }
 
 #friend-2-img{
 	position: absolute;
-	top:8px;
-	left:5px;
-	width:50px;
-	height: 50px;
+	top:13%;
+	left:2%;
+	width:20%;
+	height: 70%;
 	background:#fff;
 	border-radius: 50%;
 }
 
 #friend-2-name{
 	position: absolute;
-	top:15px;
-	left: 70px;
-	font-size: 24pt;
+	top:23%;
+	left: 30%;
+	font-size: 2.5vw;
 	font-family: Agency FB;
 	letter-spacing: 4px;
 	color:#4d4d4d;
@@ -773,10 +787,10 @@ body{
 
 .notif-div-convo-2{
 	position: relative;
-	top:20px;
-	left:230px;
-	width:30px;
-	height: 30px;
+	top:30%;
+	left:80%;
+	width:13%;
+	height: 45%;
 	background: red;
 	border-radius: 50%;
 	text-align: center;
@@ -784,7 +798,7 @@ body{
 
 #notif-txt-convo-2{
 	color:white;
-	font-size: 18pt;
+	font-size: 2vw;
 	font-family: consolas;
 	font-weight: 900;
 }
@@ -796,41 +810,41 @@ body{
 .friend-2{
 	position: absolute;
 	width: 100%;
-	height: 400px;
+	height: 90%;
 	visibility: hidden;
 }
 
 #friend-2-img-msg{
 	position: absolute;
-	top:40px;
-	left:5px;
-	width: 30px;
-	height: 30px;
+	top:12%;
+	left:2%;
+	width: 10%;
+	height: 5%;
 	background: white;
 	border-radius: 50%;
 }
 
 .friend-2 h4{
 	position: absolute;
-	font-size: 13pt;
-	font-size: consolas;
+	font-size: 1.5vw;
+	font-family: consolas;
 	background: #9fa0a2;
-	top:20px;
-	left:110px;
+	top:7%;
+	left:42%;
 	z-index: 1;
 }
 
 #hr-1{
 	position: absolute;
-	top:30px;
-	width:100px;
+	top:10%;
+	width:38%;
 	border:1px solid #404040;
 }
 
 #hr-2{
 	position: absolute;
-	top:30px;
-	width:95px;
+	top:10%;
+	width:30%;
 	right:0;
 	border:1px solid #404040;
 }
@@ -838,33 +852,34 @@ body{
 .message-bar{
 	position: absolute;
 	background: #FAD0C9FF;
-	top:70px;
-	left:30px;
-	width:100px;
-	height: 230px;
+	top:15%;
+	left:10%;
+	width:30%;
+	height: 40%;
 	border:1px solid #f49a8a;
 }
 
 .friend-2 .message-bar p{
 	font-family: consolas;
 	margin-left:5px;
+	font-size: 1vw;
 }
 
-/*end convo 1*/
+/*end convo 2*/
 
 .phone-return-div{
 	position: absolute;
-	top:18px;
-	right:50px;
+	top:35%;
+	left:75%;
 	cursor: pointer;
 }
 
 .reminder-div-2{
 	position: absolute;
 	top:30px;
-	left:1035px;
-	width:200px;
-	height: 110px;
+	right:110px;
+	width:16%;
+	height: 17%;
 	background: #bd2031;
 	border-radius: 10px;
 	z-index: 1;
@@ -875,8 +890,8 @@ body{
 	position: absolute;
 	top:5px;
 	left:5px;
-	width: 30px;
-	height: 30px;
+	width: 15%;
+	height: 25%;
 }
 
 .reminder-div-2 h4{
@@ -885,7 +900,7 @@ body{
 	text-align: center;
 	color:white;
 	font-family: consolas;
-	font-size: 12pt;
+	font-size: 1.3vw;
 	letter-spacing: 1px;
 }
 
@@ -893,7 +908,6 @@ body{
 	color:#9be1fb;
 	font-style: italic;
 }
-
 /* newly constant VARIABLES */
 
 audio{
@@ -903,34 +917,33 @@ audio{
 
 #character-juls{
 	position: absolute;
-	top:177px;
-	left:50px;
+	top:27%;
+	left:6%;
 	width:20%;
-	height: 500px;
+	height: 76%;
 }
 
 #character-alvin{
 	position: absolute;
-	top:240px;
-	left:1000px;
+	top:35%;
+	right:6%;
 	width:20%;
-	height: 500px;
+	height: 76%;
 }
 
 .characters-message-bar{
 	position: absolute;
-	bottom: 5px;
-	left:430px;
+	bottom: 0.8%;
+	left:32%;
 	width:37%;
-	height: 100px;
+	height: 15%;
 	border:3px solid black;
 	background:#fff;
 }
 
 .characters-message-bar p{
-	font-size: 22pt;
+	font-size: 2vw;
 	font-family: Arial;
-
 }
 
 .elipsis{
@@ -966,34 +979,31 @@ audio{
 
 .house-alvin{
 	position: absolute;
-	bottom:55px;
-	left:415px;
-	width:40px;
-	height: 40px;
+	bottom:19%;
+	left:87%;
+	width:9.5%;
+	height: 11%;
 	z-index: 2;
 	cursor: pointer;
-
-	/* visibility: hidden; */
 }
 .house-juls{
 	position: absolute;
-	bottom:10px;
-	left:390px;
-	width:40px;
-	height: 40px;
+	bottom:5%;
+	left:81%;
+	width:9%;
+	height: 11%;
 	z-index: 2;
 
 	cursor: pointer;
-
 	/* visibility: hidden; */
 }
 /* 8-9-2020 5:12pm */
 .school-location{
 	position: absolute;
-	top:130px;
-	left:220px;
-	width:50px;
-	height: 40px;
+	top:43%;
+	left:45%;
+	width:13%;
+	height: 15%;
 	z-index: 2;
 	cursor: pointer;
 
@@ -1032,10 +1042,10 @@ audio{
 
 .enter-school-div{
 	position: absolute;
-	top:388px;
-	left:823px;
-	width:40px;
-	height:40px;
+	top:59%;
+	left:59.8%;
+	width:3.5%;
+	height:6.5%;
 	cursor: pointer;
 	visibility: hidden;
 }
