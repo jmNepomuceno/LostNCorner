@@ -48,10 +48,20 @@ phonePhoneLog.addEventListener('click', function(){
 },false)
 
 function inputKeypadPhone(event){
-	let numCode = event.keyCode
-	let numString = String.fromCharCode(numCode)
+	// let numCode = event.keyCode
+	// if(false){
+	// 	console.log("true")
+	// 	let numString = String.fromCharCode(numCode)
+	// 	phoneLabelDiv.textContent = phoneLabelDiv.textContent + numString
+	// }else{
+	// 	console.log("false")
+	// }
+	var charCode = (event.which) ? event.which : event.keyCode;
+	if (charCode != 46 && charCode > 31 
+	  && (charCode < 48 || charCode > 57))
+	   return false;
 
-	phoneLabelDiv.textContent = phoneLabelDiv.textContent + numString
+	return true;
 }
 
 //variables for message div
@@ -402,17 +412,23 @@ mapBtn.addEventListener('click', function(){
 const yesNoBtn = document.querySelector('.yes-no-btn')
 const yesBtn = document.getElementById('yes-btn')
 const noBtn = document.getElementById('no-btn')
+let clicked_yes = false
+let clicked_no = false
 
 //convo variables
 let done_JM_message = true
 let done_Juls_message = false
-let clicked_yes = false
 let yes_done_JM_message2 = false
-let yes_done_JM_message3 = false
+let no_done_JM_message2 = false
+let done_JM_fading = false
+let done_final_Juls_Msg = false
 
 // need to click users phone number div
 const clickMyNumber = document.querySelector('.click-myNumber-div')
 let done_getting_number = false
+
+//character JM
+const char_Jm = document.getElementById('character-JM')
 
 function spaceBarPressed(event){
 	if(ellipsis_Is_visible){
@@ -432,25 +448,63 @@ function spaceBarPressed(event){
             clicked_yes = false
             yes_done_JM_message2 = true
         }else if(spaceBarCode == 32 && yes_done_JM_message2){
-            msgBar_P.textContent = "JM: Let me get your number, so I can text you my address."
+            msgBar_P.textContent = "JM: Let me get your number, so I can text you the address."
             yes_done_JM_message2 = false
-            yes_done_JM_message3 = true
             elipsis.style.visibility = "hidden"
 			ellipsis_Is_visible = false
 			
 			phoneIcon.style.pointerEvents = "auto"
-		}
-		else if(spaceBarCode == 32 && done_getting_number){
+		}else if(spaceBarCode == 32 && done_getting_number){
             msgBar_P.textContent = "JM: Okay cool! Well see ya later at the party."
 			done_getting_number = false
 			elipsis.style.visibility = "hidden"
 			ellipsis_Is_visible = false
-        }
+			let jmInt = 9
+			let jmVar = setInterval(function(){
+				if(jmInt == -1){
+					elipsis.style.visibility = "visible"
+					ellipsis_Is_visible = true
+					done_JM_fading = true
+					clearInterval(jmVar)
+				}else{
+					char_Jm.style.opacity = "0." + jmInt
+				}
+				jmInt -= 1
+			}, 200)
+        }else if(spaceBarCode == 32 && clicked_no){
+            msgBar_P.textContent = "JM: Well that was unfortunate. If you change your mind, you can contact Alvin for the address."
+            clicked_no = false
+            no_done_JM_message2 = true
+		}else if(spaceBarCode == 32 && no_done_JM_message2){
+            msgBar_P.textContent = "JULS: Alright. Thanks for the invite anyways."
+			no_done_JM_message2 = false
+			elipsis.style.visibility = "hidden"
+			ellipsis_Is_visible = false
+			let jmInt = 9
+			let jmVar = setInterval(function(){
+				if(jmInt == -1){
+					elipsis.style.visibility = "visible"
+					ellipsis_Is_visible = true
+					done_JM_fading = true
+					clearInterval(jmVar)
+				}else{
+					char_Jm.style.opacity = "0." + jmInt
+				}
+				jmInt -= 1
+			}, 200)
+        }else if(spaceBarCode == 32 && done_JM_fading){
+            msgBar_P.textContent = "JULS: : Our lesson is coming up! This gonna be interesting I believed, because it is only first day. "
+			done_JM_fading = false
+			done_final_Juls_Msg = true
+		}else if(spaceBarCode == 32 && done_final_Juls_Msg){
+            alert("Page6.html")
+			done_final_Juls_Msg = false
+		}
     }
 }
 
 yesBtn.addEventListener('click' , function(){
-    msgBar_P.textContent = "Juls: Oh yeah sure, you don’t mind if I bring a plus one? He is Jim, he is also one of our classmate here."
+    msgBar_P.textContent = "Juls: Oh yeah sure, you don’t mind if I bring a plus one? He is Jim; he is also one of our classmates here."
     clicked_yes = true
     elipsis.style.visibility = "visible"
     ellipsis_Is_visible = true
@@ -464,3 +518,11 @@ clickMyNumber.addEventListener('click', function(){
 	ellipsis_Is_visible = true
 	clickMyNumber.style.display = "none"
 })
+
+noBtn.addEventListener('click' , function(){
+    msgBar_P.textContent = "Juls: I don’t think so. I have other plans tonight, so yeah, you guys have fun tonight tho."
+    clicked_no = true
+    elipsis.style.visibility = "visible"
+    ellipsis_Is_visible = true
+    yesNoBtn.style.display = "none"
+}, false)

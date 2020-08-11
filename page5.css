@@ -1147,7 +1147,7 @@ audio{
 	z-index: 2;
 	cursor: pointer;
 
-	visibility: hidden;
+	/* visibility: hidden; */
 }
 /*END CONSTANT DISPLAY IN EVERY PAGE/SCREEN*/
 
