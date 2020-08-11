@@ -117,7 +117,7 @@ function clockLoad(){
 
 			
 			// second message/convo shows up
-			if(hh == 8){
+			if(hh >= 8){
 				showConvo_two = true;
 				showNotifFriend2 = true
 			}
@@ -543,7 +543,7 @@ function eatingBfastScreen(){
 			imgCont += 1
 			breakfastMealScreen.src = "./imgs/bfast-" + imgCont +"t"+".png"
 			breakfastMealScreen.style.width = "150%"
-			breakfastMealScreen.style.left = "-170px"
+			breakfastMealScreen.style.left = "-23%"
 		}
 
         //console.log(counter);
