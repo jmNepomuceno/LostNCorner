@@ -106,7 +106,6 @@ ss = 0;
 function clockLoad(){
 	clockVar = setInterval(function(){
 			//clearInterval(clockVar)
-			console.log(typeof mm)
 			ss++;
 
 			if(ss == 360){
@@ -284,10 +283,10 @@ mapBtn.addEventListener('click', function(){
 	/* to hide and unhide the MAP whenever the user click the MAP VIEW btn*/
 	if(mapOpen == false){
 		map.style.visibility = "visible"
-		map.style.right = "0px";
+		map.style.right = "0";
 		mapOpen = true
 	}else{
-		map.style.right = "-555px";
+		map.style.right = "-100%";
 		mapOpen = false
 		map.style.visibility = "visible"
 	}

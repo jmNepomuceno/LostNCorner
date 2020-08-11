@@ -65,10 +65,10 @@ body{
 
 .mobile{
 	position: absolute;
-	top:100px;
-	left: 550px;
-	width:270px;
-	height: 480px;
+	top:13%;
+	left: 40%;
+	width:21%;
+	height: 70%;
 	background:#020c17;
 	/*visibility: hidden;*/
 	border:2px solid black;
@@ -188,11 +188,11 @@ body{
 
 #phone-time{
 	position: absolute;
-	top:20px;
-	left:60px;
+	top:5%;
+	left:25%;
 	color:#fff;
 	font-weight: 200;
-	font-size: 3.5em;
+	font-size: 4vw;
 	z-index:1;
 	transform: translateY(50px);
 	line-height: 0.4em;
@@ -203,10 +203,10 @@ body{
 
 #phone-date{
 	position: absolute;
-	top:80px;
+	top:15%;
 	color:#fff;
 	font-weight: 200;
-	font-size: 1.5em;
+	font-size: 2vw;
 	z-index:1;
 	line-height: 0.4em;
 	transition: 0.5s;
@@ -306,10 +306,10 @@ body{
 /*convo 1*/
 .convo-1{
 	position: absolute;
-	top:70px;
+	top:10%;
 	left:0;
 	width:100%;
-	height:70px;
+	height:10%;
 	border:1px solid #4d4d4d;
 	border-right: 0;
 	border-left: 0;
@@ -320,19 +320,19 @@ body{
 
 #friend-1-img{
 	position: absolute;
-	top:8px;
-	left:5px;
-	width:50px;
-	height: 50px;
+	top:13%;
+	left:2%;
+	width:20%;
+	height: 70%;
 	background:#fff;
 	border-radius: 50%;
 }
 
 #friend-1-name{
 	position: absolute;
-	top:15px;
-	left: 70px;
-	font-size: 24pt;
+	top:23%;
+	left: 30%;
+	font-size: 2.5vw;
 	font-family: Agency FB;
 	letter-spacing: 4px;
 	color:#4d4d4d;
@@ -340,10 +340,10 @@ body{
 
 .notif-div-convo-1{
 	position: relative;
-	top:20px;
-	left:230px;
-	width:30px;
-	height: 30px;
+	top:30%;
+	left:80%;
+	width:13%;
+	height: 45%;
 	background: red;
 	border-radius: 50%;
 	text-align: center;
@@ -351,7 +351,7 @@ body{
 
 #notif-txt-convo-1{
 	color:white;
-	font-size: 18pt;
+	font-size: 2vw;
 	font-family: consolas;
 	font-weight: 900;
 }
@@ -363,24 +363,24 @@ body{
 .friend-1{
 	position: absolute;
 	width: 100%;
-	height: 400px;
+	height: 90%;
 	visibility: hidden;
 }
 
 #friend-1-img-msg{
 	position: absolute;
-	top:40px;
-	left:5px;
-	width: 30px;
-	height: 30px;
+	top:6%;
+	left:2%;
+	width: 10%;
+	height: 5%;
 	background: white;
 	border-radius: 50%;
 }
 
 .friend-1 h4{
 	position: absolute;
-	font-size: 13pt;
-	font-size: consolas;
+	font-size: 1.5vw;
+	font-family: consolas;
 	background: #9fa0a2;
 	top:20px;
 	left:110px;
@@ -389,15 +389,15 @@ body{
 
 #hr-1{
 	position: absolute;
-	top:30px;
-	width:100px;
+	top:10%;
+	width:40%;
 	border:1px solid #404040;
 }
 
 #hr-2{
 	position: absolute;
-	top:30px;
-	width:95px;
+	top:10%;
+	width:30%;
 	right:0;
 	border:1px solid #404040;
 }
@@ -405,16 +405,17 @@ body{
 .message-bar{
 	position: absolute;
 	background: #FAD0C9FF;
-	top:70px;
-	left:30px;
-	width:100px;
-	height: 230px;
+	top:15%;
+	left:10%;
+	width:30%;
+	height: 40%;
 	border:1px solid #f49a8a;
 }
 
 .friend-1 .message-bar p{
 	font-family: consolas;
 	margin-left:5px;
+	font-size: 1.2vw;
 }
 /*end convo 1*/
 
@@ -721,9 +722,9 @@ body{
 	position: absolute;
 	top:50px;
 	/*right: 0;*/
-	right: -555px;
+	right: -100%;
 	width:35%;
-	height: 300px;
+	height: 43%;
 	transition: 0.5s;
 	cursor: pointer;
 	pointer-events: none;
@@ -749,11 +750,11 @@ body{
 
 #marker-map-img{
 	position: absolute;
-	top:240px;
-	left: 395px;
+	top:80%;
+	left: 83%;
 	z-index: 2;
-	width:30px;
-	height: 30px;
+	width:6%;
+	height: 10%
 	
 }
 
@@ -905,20 +906,14 @@ body{
 
 .reminder-div-1{
 	position: absolute;
-	top:5px;
+	top:10px;
 	right: 120px;
-	width:200px;
-	height: 75px;
+	width:15%;
+	height: 10.7%;
 	background: #bd2031;
 	border-radius: 10px;
 	/*visibility: hidden;*/
 }
-
-/*
-reminder-div 1 = top:5px;
-reminder-div 2 = top:70px;
-reminder-div 3 = top:135px;
-*/
 
 .reminder-div-1 .arrow-right-1 {
 	position: absolute;
@@ -937,7 +932,7 @@ reminder-div 3 = top:135px;
 	text-align: center;
 	color:white;
 	font-family: consolas;
-	font-size: 14pt;
+	font-size: 1.4vw;
 	letter-spacing: 1px;
 }
 
@@ -1001,8 +996,8 @@ reminder-div 3 = top:135px;
 	position: absolute;
 	top:135px;
 	right: 120px;
-	width:200px;
-	height: 75px;
+	width:15%;
+	height: 10.7%;
 	background: #bd2031;
 	border-radius: 10px;
 	visibility: hidden;
@@ -1026,7 +1021,7 @@ reminder-div 3 = top:135px;
 	text-align: center;
 	color:white;
 	font-family: consolas;
-	font-size: 12pt;
+	font-size: 1.25vw;
 	letter-spacing: 1px;
 }
 
@@ -1045,9 +1040,9 @@ reminder-div 3 = top:135px;
 .reminder-div-4{
 	position: absolute;
 	top:55px;
-	left: 220px;
-	width:200px;
-	height: 75px;
+	left: 20%;
+	width:15%;
+	height: 10.7%;
 	background: #bd2031;
 	border-radius: 10px;
 	visibility: hidden;
@@ -1069,7 +1064,7 @@ reminder-div 3 = top:135px;
 	text-align: center;
 	color:white;
 	font-family: consolas;
-	font-size: 14pt;
+	font-size: 1.3vw;
 	letter-spacing: 1px;
 }
 
@@ -1087,10 +1082,10 @@ reminder-div 3 = top:135px;
 
 .reminder-div-5{
 	position: absolute;
-	top:570px;
-	left: 740px;
-	width:200px;
-	height: 75px;
+	top:81.5%;
+	left: 55%;
+	width:15%;
+	height: 10.7%;
 	background: #bd2031;
 	border-radius: 10px;
 	z-index: 2;
@@ -1113,7 +1108,7 @@ reminder-div 3 = top:135px;
 	text-align: center;
 	color:white;
 	font-family: consolas;
-	font-size: 14pt;
+	font-size: 1.35vw;
 	letter-spacing: 1px;
 }
 
@@ -1132,9 +1127,9 @@ reminder-div 3 = top:135px;
 .reminder-div-6{
 	position: absolute;
 	top:140px;
-	left:1050px;
-	width:200px;
-	height: 75px;
+	right:120px;
+	width:15%;
+	height: 10.7%;
 	background: #bd2031;
 	border-radius: 10px;
 	visibility: hidden;
@@ -1157,7 +1152,7 @@ reminder-div 3 = top:135px;
 	text-align: center;
 	color:white;
 	font-family: consolas;
-	font-size: 12pt;
+	font-size: 1.25vw;
 	letter-spacing: 1px;
 }
 
@@ -1183,9 +1178,9 @@ reminder-div 3 = top:135px;
 .reminder-div-7{
 	position: absolute;
 	top:120px;
-	left:1050px;
-	width:200px;
-	height: 110px;
+	right:110px;
+	width:16%;
+	height: 17%;
 	background: #bd2031;
 	border-radius: 10px;
 	visibility: hidden;
@@ -1195,8 +1190,8 @@ reminder-div 3 = top:135px;
 	position: absolute;
 	top:5px;
 	left:5px;
-	width: 30px;
-	height: 30px;
+	width: 15%;
+	height: 25%;
 }
 
 .reminder-div-7 h4{
@@ -1205,7 +1200,7 @@ reminder-div 3 = top:135px;
 	text-align: center;
 	color:white;
 	font-family: consolas;
-	font-size: 12pt;
+	font-size: 1.3vw;
 	letter-spacing: 1px;
 }
 
