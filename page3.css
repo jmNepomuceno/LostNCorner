@@ -16,7 +16,7 @@ body{
 
 #room{
 	width: 100%;
-	height: 100%;
+	height: 100vh;
 	z-index: -1;
 	
 	filter: blur(3px); 
@@ -999,13 +999,13 @@ body{
 
 
 #bath{
-	width:100px;
-	height:300px;
+	width:9%;
+	height:45%;
 	
 	position: absolute;
 	
-	top:150px;
-	left:900px;
+	top:21%;
+	left:65%;
 	cursor: pointer;
 
 	/* 9:07am */
@@ -1031,17 +1031,17 @@ main{
 	position: absolute;
 	top:0;
 	width:100%;
-	height: 656px;
+	height: 100%;
 	/* background: skyblue; */ 
 	background: #020c17; /* yung kulay ng Background, edit mo na lang mamaya kung alin mas bagay na color */
 	/* z-index: -1; */
 }
 #progress-bar{
-	height:50px;
-	width: 300px;
+	height:9%;
+	width: 23%;
 	position:absolute;
-	top:300px;
-	left:550px;
+	top:50%;
+	left:41%;
 }
 
 .screen-taking-bath h1{
@@ -1049,9 +1049,9 @@ main{
 }
 
 .title-bath{
-	position: relative;
+	position: absolute;
 	width:100%;
-	height:300px;
+	height:30%;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -1062,7 +1062,7 @@ main{
 
 .title-bath h4{
 	position: absolute;
-	font-size: 110pt;
+	font-size: 11vw;
 	color:transparent;
 	font-family: Agency FB;
 	margin-left: 150px;
@@ -1154,50 +1154,51 @@ main{
 
 #obj1{
 	position: absolute;
-	left:320px;
-	top:370px;
+	left:24%;
+	top:53%;
 	z-index: 1;
-	height:170px;
-	width: 100px;
+	height:28%;
+	width: 8%;
 	pointer-events: none;
 }
 
 #obj2{
 	position: absolute;
-	left:590px;
-	top:270px;
+	left:42.8%;
+	top:40%;
 	z-index: 1;
-	height:60px;
-	width: 110px;
+	height:10%;
+	width: 9%;
 	pointer-events: none;
 }
 
 #obj3{
 	position: absolute;
-	left:290px;
-	top:140px;
+	left:19%;
+	top:20%;
 	z-index: 1;
-	height:90px;
-	width: 150px;
+	height:15%;
+	width: 14%;
 	pointer-events: none;
 }
+
 #obj4{
 	position: absolute;
-	left:560px;
-	top:150px;
+	left:40%;
+	top:22%;
 	z-index: 1;
-	height:60px;
-	width: 140px;
+	height:10%;
+	width: 14%;
 	pointer-events: none;
 }
 
 /* 9:10am */
 #refrigirator{
 	position: absolute;
-	top:115px;
-	right:160px;
-	width:180px;
-	height: 500px;
+	top:13%;
+	right:11%;
+	width:15%;
+	height: 60%;
 	cursor: pointer;
 
 	visibility: hidden;
@@ -1205,10 +1206,10 @@ main{
 
 #breakfast-meal{
 	position: absolute;
-	top:340px;
-	left:630px;
-	width:80px;
-	height: 80px;
+	top:46.5%;
+	left:46.5%;
+	width:5%;
+	height: 8%;
 	transform: rotateX(50deg);
 	cursor: pointer;
 
@@ -1221,7 +1222,7 @@ main{
 	position: absolute;
 	top:0;
 	width:100%;
-	height: 656px;
+	height: 100%;
 	background: #020c17;
 
 	visibility: hidden;
@@ -1229,10 +1230,10 @@ main{
 
 .bfast-img-div{
 	position: absolute;
-	top:10px;
-	left:350px;
+	top:5%;
+	left:26%;
 	width:50%;
-	height:500px;
+	height:80%;
 }
 
 #breakfast-meal-screen{
@@ -1242,34 +1243,35 @@ main{
 }
 
 #progress-bar-bfast{
-	height:50px;
-	width: 300px;
+	height:9%;
+	width: 23%;
 	position:absolute;
-	top:600px;
-	left:550px;
+	top:88%;
+	left:40%;
 }
 
 .house-alvin{
 	position: absolute;
-	bottom:55px;
-	left:415px;
-	width:40px;
-	height: 40px;
+	bottom:19%;
+	left:87%;
+	width:9.5%;
+	height: 11%;
 	z-index: 2;
 	cursor: pointer;
 
 	visibility: hidden;
+
+	
 }
 .house-juls{
 	position: absolute;
-	bottom:10px;
-	left:390px;
-	width:40px;
-	height: 40px;
+	bottom:5%;
+	left:81%;
+	width:9%;
+	height: 11%;
 	z-index: 2;
 
 	cursor: pointer;
-
 	/* visibility: hidden; */
 }
 
