@@ -11,6 +11,7 @@ body{
 	background-size: cover;
 	background-position: center;
 	overflow: hidden;
+	position: relative;
 }
 
 .title-div{
@@ -627,15 +628,15 @@ body{
 
 .clock{
 	position: absolute;
-	top:10px;
-	left:10px;
-	width:150px;
-	height: 150px;
+	top:2%;
+	left:1%;
+	width:12%;
+	height: 23%;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	background: url(./imgs/clock.png);
-	background-size: cover;
+	background-size: 100% 100%;
 	border: 4px solid #091921;
 	border-radius: 50%;
 	box-shadow: 0 -15px 15px rgba(255,255,255,0.05),
@@ -653,7 +654,7 @@ body{
 
 .am-pm{
 	color:white;
-	font-size: 14pt;
+	font-size: 1vw;
 	margin-left:5px;
 }
 
@@ -664,8 +665,8 @@ body{
 .clock:before{
 	content: '';
 	position: absolute;
-	width: 15px;
-	height: 15px;
+	width: 10%;
+	height: 10%;
 	background: #fff;
 	border-radius: 50%;
 	z-index: 10000;

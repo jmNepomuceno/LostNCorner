@@ -152,12 +152,12 @@ phoneBtn.addEventListener('click' , function(){
 			reminderDiv2.style.visibility = "visible";
 		}else{
 			reminderDiv2.style.visibility = "hidden";
-			mobile.style.right = "-590px"
+			mobile.style.right = "-25%"
 			mobileOpen = false;
 			mobile.style.visibility = "hidden"
 		}
 	}else{
-		mobile.style.right = "90px"
+		mobile.style.right = "6%"
 		mobileOpen = true;
 		mobile.style.visibility = "visible"
 

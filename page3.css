@@ -5,7 +5,7 @@
 
 body{
 	width: 100%;
-	height: 500px;
+	height: 100vh;
 	
 	background-size: cover;
 	background-color: #cccccc;
@@ -116,10 +116,10 @@ body{
 /*CLOCK*/
 .clock{
 	position: absolute;
-	top:10px;
-	left:10px;
-	width:150px;
-	height: 150px;
+	top:2%;
+	left:1%;
+	width:12%;
+	height: 23%;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -137,7 +137,7 @@ body{
 
 .am-pm{
 	color:white;
-	font-size: 14pt;
+	font-size: 1vw;
 	margin-left:5px;
 }
 
@@ -204,7 +204,7 @@ body{
 	position: absolute;
 	top:50px;
 	/*right: 0;*/
-	right: -555px;
+	right: -50%;
 	width:35%;
 	height: 300px;
 	transition: 0.5s;
@@ -232,11 +232,11 @@ body{
 
 #marker-map-img{
 	position: absolute;
-	top:240px;
-	left: 395px;
+	top:80%;
+	left: 83%;
 	z-index: 2;
-	width:30px;
-	height: 30px;
+	width:6%;
+	height: 10%;
 	
 }
 
@@ -391,9 +391,9 @@ body{
 .mobile{
 	position: absolute;
 	top:200px;
-	right:-590px;
-	width:270px;
-	height: 400px;
+	right:-25%;
+	width:20%;
+	height:60%;
 	background:#020c17;
 	border:2px solid black;
 	border-top: 0;
@@ -853,8 +853,8 @@ body{
 
 .phone-return-div{
 	position: absolute;
-	top:18px;
-	right:50px;
+	top:35%;
+	left:75%;
 	cursor: pointer;
 }
 
@@ -898,33 +898,24 @@ body{
 
 #character-juls{
 	position: absolute;
-	top:177px;
-	left:50px;
+	top:27%;
+	left:6%;
 	width:20%;
-	height: 500px;
+	height: 76%;
 }
-
-/*#character-sec{
-	position: absolute;
-	top:157px;
-	right:-50px;
-	width:40%;
-	height: 500px;
-	transform: rotateY(180deg);
-}*/
 
 .characters-message-bar{
 	position: absolute;
-	bottom: 5px;
-	left:430px;
+	bottom: 0.8%;
+	left:32%;
 	width:37%;
-	height: 100px;
+	height: 15%;
 	border:3px solid black;
 	background:#fff;
 }
 
 .characters-message-bar p{
-	font-size: 22pt;
+	font-size: 2vw;
 	font-family: Arial;
 
 	visibility: hidden;
@@ -963,11 +954,11 @@ body{
 
 .reminder-div-1{
 	position: absolute;
-	top:400px;
-	left:555px;
+	top:60%;
+	left:42%;
 	right: 120px;
-	width:250px;
-	height: 100px;
+	width:18%;
+	height: 16%;
 	background: #bd2031;
 	border-radius: 10px;
 	/*visibility: hidden;*/
@@ -990,7 +981,7 @@ body{
 	text-align: center;
 	color:white;
 	font-family: consolas;
-	font-size: 14pt;
+	font-size: 1.32vw;
 	letter-spacing: 1px;
 }
 

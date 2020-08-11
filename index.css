@@ -12,8 +12,8 @@ body{
 
 .title-txt{
 	position: absolute;
-	top:70px;
-	left:270px;
+	top:10%;
+	left:20%;
 	z-index: 2;
 	background: transparent;
 	width:65%;
@@ -21,6 +21,7 @@ body{
 }
 
 .title-txt h2{
+	position: absolute;
 	font-size: 9vw;
 	font-family: Agency FB;
 	color:#333;
@@ -132,8 +133,8 @@ body{
 
 .play-btn{
 	position: absolute;
-	top:280px;
-	left:600px;
+	top:40%;
+	left:44%;
 	z-index: 2;
 	font-family: consolas;
 	cursor: pointer;
