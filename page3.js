@@ -64,7 +64,7 @@ let mm = 0;
 let ss = 0;
 
 function onload(){
-	itemsBtn.style.pointerEvents = "none"
+	// itemsBtn.style.pointerEvents = "none"
 }
 
 clockLoad()
